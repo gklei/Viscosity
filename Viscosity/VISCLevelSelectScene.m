@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 HardFlip, LLC. All rights reserved.
 //
 
-#import "VISCMyScene.h"
+#import "VISCLevelSelectScene.h"
 
-@implementation VISCMyScene
+@implementation VISCLevelSelectScene
 
 -(id)initWithSize:(CGSize)size {
    if (self = [super initWithSize:size]) {

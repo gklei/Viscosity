@@ -7,7 +7,7 @@
 //
 
 #import "VISCViewController.h"
-#import "VISCMyScene.h"
+#import "VISCLevelSelectScene.h"
 
 @implementation VISCViewController
 
@@ -21,7 +21,7 @@
    skView.showsNodeCount = YES;
    
    // Create and configure the scene.
-   SKScene * scene = [VISCMyScene sceneWithSize:skView.bounds.size];
+   SKScene * scene = [VISCLevelSelectScene sceneWithSize:skView.bounds.size];
    scene.scaleMode = SKSceneScaleModeAspectFill;
    
    // Present the scene.
