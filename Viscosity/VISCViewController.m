@@ -14,13 +14,13 @@
 - (void)viewDidLoad
 {
    [super viewDidLoad];
+}
+
+- (void)viewWillLayoutSubviews
+{
+   [super viewWillLayoutSubviews];
    
-   // Configure the view.
    SKView * skView = (SKView *)self.view;
-   skView.showsFPS = YES;
-   skView.showsNodeCount = YES;
-   
-   // Create and configure the scene.
    SKScene * scene = [VISCLevelSelectScene sceneWithSize:skView.bounds.size];
    scene.scaleMode = SKSceneScaleModeAspectFill;
    

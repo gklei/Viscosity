@@ -10,43 +10,33 @@
 
 @implementation VISCLevelSelectScene
 
--(id)initWithSize:(CGSize)size {
-   if (self = [super initWithSize:size]) {
-      /* Setup your scene here */
-      
+-(id)initWithSize:(CGSize)size
+{
+   if (self = [super initWithSize:size])
+   {
       self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-      
-      SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-      
-      myLabel.text = @"Hello, World!";
-      myLabel.fontSize = 30;
-      myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                     CGRectGetMidY(self.frame));
-      
-      [self addChild:myLabel];
+      [self setupTitleLabel];
    }
    return self;
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-   /* Called when a touch begins */
+- (void)setupTitleLabel
+{
+   SKLabelNode* viscosityTitle = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
+   viscosityTitle.text = @"VISCOSITY";
+   CGFloat xPosition = CGRectGetMidX(self.frame);
+   CGFloat yPosition = CGRectGetMidY(self.frame) + CGRectGetHeight(self.frame)*.25;
+   viscosityTitle.position = CGPointMake(xPosition, yPosition);
    
-   for (UITouch *touch in touches) {
-      CGPoint location = [touch locationInNode:self];
-      
-      SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-      
-      sprite.position = location;
-      
-      SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-      
-      [sprite runAction:[SKAction repeatActionForever:action]];
-      
-      [self addChild:sprite];
-   }
+   [self addChild:viscosityTitle];
 }
 
--(void)update:(CFTimeInterval)currentTime {
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+}
+
+-(void)update:(CFTimeInterval)currentTime
+{
    /* Called before each frame is rendered */
 }
 
