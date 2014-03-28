@@ -15,7 +15,9 @@
    if (self = [super initWithSize:size])
    {
       self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+      
       [self setupTitleLabel];
+      [self setupLevelLabelForLevelNumber:1];
    }
    return self;
 }
@@ -29,6 +31,19 @@
    viscosityTitle.position = CGPointMake(xPosition, yPosition);
    
    [self addChild:viscosityTitle];
+}
+
+- (void)setupLevelLabelForLevelNumber:(NSUInteger)levelNumber
+{
+   SKLabelNode* levelLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
+   CGFloat xPosition = CGRectGetMidX(self.frame);
+   CGFloat yPosition = CGRectGetMidY(self.frame) - CGRectGetHeight(self.frame)*.25;
+   levelLabel.position = CGPointMake(xPosition, yPosition);
+   levelLabel.fontSize = 14;
+   levelLabel.fontColor = [SKColor redColor];
+   levelLabel.text = [NSString stringWithFormat:@"Level %d", levelNumber];
+   
+   [self addChild:levelLabel];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
