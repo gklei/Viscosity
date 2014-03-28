@@ -18,7 +18,6 @@
 		5BB00B1E18E5DF9D002AC435 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B1C18E5DF9D002AC435 /* Main_iPad.storyboard */; };
 		5BB00B2118E5DF9D002AC435 /* VISCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B2018E5DF9D002AC435 /* VISCViewController.m */; };
 		5BB00B2418E5DF9D002AC435 /* VISCMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B2318E5DF9D002AC435 /* VISCMyScene.m */; };
-		5BB00B2618E5DF9D002AC435 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B2518E5DF9D002AC435 /* Spaceship.png */; };
 		5BB00B2818E5DF9D002AC435 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B2718E5DF9D002AC435 /* Images.xcassets */; };
 		5BB00B2F18E5DF9D002AC435 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B2E18E5DF9D002AC435 /* XCTest.framework */; };
 		5BB00B3018E5DF9D002AC435 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0518E5DF9D002AC435 /* Foundation.framework */; };
@@ -55,7 +54,6 @@
 		5BB00B2018E5DF9D002AC435 /* VISCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VISCViewController.m; sourceTree = "<group>"; };
 		5BB00B2218E5DF9D002AC435 /* VISCMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VISCMyScene.h; sourceTree = "<group>"; };
 		5BB00B2318E5DF9D002AC435 /* VISCMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VISCMyScene.m; sourceTree = "<group>"; };
-		5BB00B2518E5DF9D002AC435 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		5BB00B2718E5DF9D002AC435 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5BB00B2D18E5DF9D002AC435 /* ViscosityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViscosityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB00B2E18E5DF9D002AC435 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -131,7 +129,6 @@
 				5BB00B2018E5DF9D002AC435 /* VISCViewController.m */,
 				5BB00B2218E5DF9D002AC435 /* VISCMyScene.h */,
 				5BB00B2318E5DF9D002AC435 /* VISCMyScene.m */,
-				5BB00B2518E5DF9D002AC435 /* Spaceship.png */,
 				5BB00B2718E5DF9D002AC435 /* Images.xcassets */,
 				5BB00B0E18E5DF9D002AC435 /* Supporting Files */,
 			);
@@ -244,7 +241,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BB00B2618E5DF9D002AC435 /* Spaceship.png in Resources */,
 				5BB00B2818E5DF9D002AC435 /* Images.xcassets in Resources */,
 				5BB00B1E18E5DF9D002AC435 /* Main_iPad.storyboard in Resources */,
 				5BB00B1B18E5DF9D002AC435 /* Main_iPhone.storyboard in Resources */,
