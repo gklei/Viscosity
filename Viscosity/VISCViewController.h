@@ -1,0 +1,14 @@
+//
+//  VISCViewController.h
+//  Viscosity
+//
+
+//  Copyright (c) 2014 HardFlip, LLC. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <SpriteKit/SpriteKit.h>
+
+@interface VISCViewController : UIViewController
+
+@end

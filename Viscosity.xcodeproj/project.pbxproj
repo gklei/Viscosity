@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BB00B0618E5DF9D002AC435 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0518E5DF9D002AC435 /* Foundation.framework */; };
+		5BB00B0818E5DF9D002AC435 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0718E5DF9D002AC435 /* CoreGraphics.framework */; };
+		5BB00B0A18E5DF9D002AC435 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0918E5DF9D002AC435 /* UIKit.framework */; };
+		5BB00B0C18E5DF9D002AC435 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0B18E5DF9D002AC435 /* SpriteKit.framework */; };
+		5BB00B1218E5DF9D002AC435 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B1018E5DF9D002AC435 /* InfoPlist.strings */; };
+		5BB00B1418E5DF9D002AC435 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B1318E5DF9D002AC435 /* main.m */; };
+		5BB00B1818E5DF9D002AC435 /* VISCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B1718E5DF9D002AC435 /* VISCAppDelegate.m */; };
+		5BB00B1B18E5DF9D002AC435 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B1918E5DF9D002AC435 /* Main_iPhone.storyboard */; };
+		5BB00B1E18E5DF9D002AC435 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B1C18E5DF9D002AC435 /* Main_iPad.storyboard */; };
+		5BB00B2118E5DF9D002AC435 /* VISCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B2018E5DF9D002AC435 /* VISCViewController.m */; };
+		5BB00B2418E5DF9D002AC435 /* VISCMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B2318E5DF9D002AC435 /* VISCMyScene.m */; };
+		5BB00B2618E5DF9D002AC435 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B2518E5DF9D002AC435 /* Spaceship.png */; };
+		5BB00B2818E5DF9D002AC435 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B2718E5DF9D002AC435 /* Images.xcassets */; };
+		5BB00B2F18E5DF9D002AC435 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B2E18E5DF9D002AC435 /* XCTest.framework */; };
+		5BB00B3018E5DF9D002AC435 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0518E5DF9D002AC435 /* Foundation.framework */; };
+		5BB00B3118E5DF9D002AC435 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0918E5DF9D002AC435 /* UIKit.framework */; };
+		5BB00B3918E5DF9D002AC435 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B3718E5DF9D002AC435 /* InfoPlist.strings */; };
+		5BB00B3B18E5DF9D002AC435 /* ViscosityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5BB00B3218E5DF9D002AC435 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BB00AFA18E5DF9D002AC435 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BB00B0118E5DF9D002AC435;
+			remoteInfo = Viscosity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5BB00B0218E5DF9D002AC435 /* Viscosity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viscosity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB00B0518E5DF9D002AC435 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5BB00B0718E5DF9D002AC435 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5BB00B0918E5DF9D002AC435 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5BB00B0B18E5DF9D002AC435 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		5BB00B0F18E5DF9D002AC435 /* Viscosity-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Viscosity-Info.plist"; sourceTree = "<group>"; };
+		5BB00B1118E5DF9D002AC435 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5BB00B1318E5DF9D002AC435 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5BB00B1518E5DF9D002AC435 /* Viscosity-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Viscosity-Prefix.pch"; sourceTree = "<group>"; };
+		5BB00B1618E5DF9D002AC435 /* VISCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VISCAppDelegate.h; sourceTree = "<group>"; };
+		5BB00B1718E5DF9D002AC435 /* VISCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VISCAppDelegate.m; sourceTree = "<group>"; };
+		5BB00B1A18E5DF9D002AC435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		5BB00B1D18E5DF9D002AC435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		5BB00B1F18E5DF9D002AC435 /* VISCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VISCViewController.h; sourceTree = "<group>"; };
+		5BB00B2018E5DF9D002AC435 /* VISCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VISCViewController.m; sourceTree = "<group>"; };
+		5BB00B2218E5DF9D002AC435 /* VISCMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VISCMyScene.h; sourceTree = "<group>"; };
+		5BB00B2318E5DF9D002AC435 /* VISCMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VISCMyScene.m; sourceTree = "<group>"; };
+		5BB00B2518E5DF9D002AC435 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		5BB00B2718E5DF9D002AC435 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5BB00B2D18E5DF9D002AC435 /* ViscosityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViscosityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BB00B2E18E5DF9D002AC435 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5BB00B3618E5DF9D002AC435 /* ViscosityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ViscosityTests-Info.plist"; sourceTree = "<group>"; };
+		5BB00B3818E5DF9D002AC435 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViscosityTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BB00AFF18E5DF9D002AC435 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB00B0818E5DF9D002AC435 /* CoreGraphics.framework in Frameworks */,
+				5BB00B0A18E5DF9D002AC435 /* UIKit.framework in Frameworks */,
+				5BB00B0C18E5DF9D002AC435 /* SpriteKit.framework in Frameworks */,
+				5BB00B0618E5DF9D002AC435 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB00B2A18E5DF9D002AC435 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB00B2F18E5DF9D002AC435 /* XCTest.framework in Frameworks */,
+				5BB00B3118E5DF9D002AC435 /* UIKit.framework in Frameworks */,
+				5BB00B3018E5DF9D002AC435 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BB00AF918E5DF9D002AC435 = {
+			isa = PBXGroup;
+			children = (
+				5BB00B0D18E5DF9D002AC435 /* Viscosity */,
+				5BB00B3418E5DF9D002AC435 /* ViscosityTests */,
+				5BB00B0418E5DF9D002AC435 /* Frameworks */,
+				5BB00B0318E5DF9D002AC435 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5BB00B0318E5DF9D002AC435 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B0218E5DF9D002AC435 /* Viscosity.app */,
+				5BB00B2D18E5DF9D002AC435 /* ViscosityTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BB00B0418E5DF9D002AC435 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B0518E5DF9D002AC435 /* Foundation.framework */,
+				5BB00B0718E5DF9D002AC435 /* CoreGraphics.framework */,
+				5BB00B0918E5DF9D002AC435 /* UIKit.framework */,
+				5BB00B0B18E5DF9D002AC435 /* SpriteKit.framework */,
+				5BB00B2E18E5DF9D002AC435 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BB00B0D18E5DF9D002AC435 /* Viscosity */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B1618E5DF9D002AC435 /* VISCAppDelegate.h */,
+				5BB00B1718E5DF9D002AC435 /* VISCAppDelegate.m */,
+				5BB00B1918E5DF9D002AC435 /* Main_iPhone.storyboard */,
+				5BB00B1C18E5DF9D002AC435 /* Main_iPad.storyboard */,
+				5BB00B1F18E5DF9D002AC435 /* VISCViewController.h */,
+				5BB00B2018E5DF9D002AC435 /* VISCViewController.m */,
+				5BB00B2218E5DF9D002AC435 /* VISCMyScene.h */,
+				5BB00B2318E5DF9D002AC435 /* VISCMyScene.m */,
+				5BB00B2518E5DF9D002AC435 /* Spaceship.png */,
+				5BB00B2718E5DF9D002AC435 /* Images.xcassets */,
+				5BB00B0E18E5DF9D002AC435 /* Supporting Files */,
+			);
+			path = Viscosity;
+			sourceTree = "<group>";
+		};
+		5BB00B0E18E5DF9D002AC435 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B0F18E5DF9D002AC435 /* Viscosity-Info.plist */,
+				5BB00B1018E5DF9D002AC435 /* InfoPlist.strings */,
+				5BB00B1318E5DF9D002AC435 /* main.m */,
+				5BB00B1518E5DF9D002AC435 /* Viscosity-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BB00B3418E5DF9D002AC435 /* ViscosityTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */,
+				5BB00B3518E5DF9D002AC435 /* Supporting Files */,
+			);
+			path = ViscosityTests;
+			sourceTree = "<group>";
+		};
+		5BB00B3518E5DF9D002AC435 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B3618E5DF9D002AC435 /* ViscosityTests-Info.plist */,
+				5BB00B3718E5DF9D002AC435 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BB00B0118E5DF9D002AC435 /* Viscosity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB00B3E18E5DF9D002AC435 /* Build configuration list for PBXNativeTarget "Viscosity" */;
+			buildPhases = (
+				5BB00AFE18E5DF9D002AC435 /* Sources */,
+				5BB00AFF18E5DF9D002AC435 /* Frameworks */,
+				5BB00B0018E5DF9D002AC435 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Viscosity;
+			productName = Viscosity;
+			productReference = 5BB00B0218E5DF9D002AC435 /* Viscosity.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5BB00B2C18E5DF9D002AC435 /* ViscosityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BB00B4118E5DF9D002AC435 /* Build configuration list for PBXNativeTarget "ViscosityTests" */;
+			buildPhases = (
+				5BB00B2918E5DF9D002AC435 /* Sources */,
+				5BB00B2A18E5DF9D002AC435 /* Frameworks */,
+				5BB00B2B18E5DF9D002AC435 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BB00B3318E5DF9D002AC435 /* PBXTargetDependency */,
+			);
+			name = ViscosityTests;
+			productName = ViscosityTests;
+			productReference = 5BB00B2D18E5DF9D002AC435 /* ViscosityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BB00AFA18E5DF9D002AC435 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VISC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "HardFlip, LLC";
+				TargetAttributes = {
+					5BB00B2C18E5DF9D002AC435 = {
+						TestTargetID = 5BB00B0118E5DF9D002AC435;
+					};
+				};
+			};
+			buildConfigurationList = 5BB00AFD18E5DF9D002AC435 /* Build configuration list for PBXProject "Viscosity" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BB00AF918E5DF9D002AC435;
+			productRefGroup = 5BB00B0318E5DF9D002AC435 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BB00B0118E5DF9D002AC435 /* Viscosity */,
+				5BB00B2C18E5DF9D002AC435 /* ViscosityTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BB00B0018E5DF9D002AC435 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB00B2618E5DF9D002AC435 /* Spaceship.png in Resources */,
+				5BB00B2818E5DF9D002AC435 /* Images.xcassets in Resources */,
+				5BB00B1E18E5DF9D002AC435 /* Main_iPad.storyboard in Resources */,
+				5BB00B1B18E5DF9D002AC435 /* Main_iPhone.storyboard in Resources */,
+				5BB00B1218E5DF9D002AC435 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB00B2B18E5DF9D002AC435 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB00B3918E5DF9D002AC435 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BB00AFE18E5DF9D002AC435 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB00B1418E5DF9D002AC435 /* main.m in Sources */,
+				5BB00B2418E5DF9D002AC435 /* VISCMyScene.m in Sources */,
+				5BB00B1818E5DF9D002AC435 /* VISCAppDelegate.m in Sources */,
+				5BB00B2118E5DF9D002AC435 /* VISCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BB00B2918E5DF9D002AC435 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BB00B3B18E5DF9D002AC435 /* ViscosityTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5BB00B3318E5DF9D002AC435 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BB00B0118E5DF9D002AC435 /* Viscosity */;
+			targetProxy = 5BB00B3218E5DF9D002AC435 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5BB00B1018E5DF9D002AC435 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BB00B1118E5DF9D002AC435 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5BB00B1918E5DF9D002AC435 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BB00B1A18E5DF9D002AC435 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		5BB00B1C18E5DF9D002AC435 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BB00B1D18E5DF9D002AC435 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		5BB00B3718E5DF9D002AC435 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BB00B3818E5DF9D002AC435 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BB00B3C18E5DF9D002AC435 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BB00B3D18E5DF9D002AC435 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BB00B3F18E5DF9D002AC435 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Viscosity/Viscosity-Prefix.pch";
+				INFOPLIST_FILE = "Viscosity/Viscosity-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5BB00B4018E5DF9D002AC435 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Viscosity/Viscosity-Prefix.pch";
+				INFOPLIST_FILE = "Viscosity/Viscosity-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5BB00B4218E5DF9D002AC435 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Viscosity.app/Viscosity";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Viscosity/Viscosity-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ViscosityTests/ViscosityTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5BB00B4318E5DF9D002AC435 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Viscosity.app/Viscosity";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Viscosity/Viscosity-Prefix.pch";
+				INFOPLIST_FILE = "ViscosityTests/ViscosityTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BB00AFD18E5DF9D002AC435 /* Build configuration list for PBXProject "Viscosity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB00B3C18E5DF9D002AC435 /* Debug */,
+				5BB00B3D18E5DF9D002AC435 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BB00B3E18E5DF9D002AC435 /* Build configuration list for PBXNativeTarget "Viscosity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB00B3F18E5DF9D002AC435 /* Debug */,
+				5BB00B4018E5DF9D002AC435 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5BB00B4118E5DF9D002AC435 /* Build configuration list for PBXNativeTarget "ViscosityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BB00B4218E5DF9D002AC435 /* Debug */,
+				5BB00B4318E5DF9D002AC435 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BB00AFA18E5DF9D002AC435 /* Project object */;
+}
