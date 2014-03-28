@@ -10,7 +10,7 @@
 
 @implementation VISCLevelSelectScene
 
--(id)initWithSize:(CGSize)size
+- (id)initWithSize:(CGSize)size
 {
    if (self = [super initWithSize:size])
    {
@@ -31,11 +31,11 @@
    [self addChild:viscosityTitle];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 }
 
--(void)update:(CFTimeInterval)currentTime
+- (void)update:(CFTimeInterval)currentTime
 {
    /* Called before each frame is rendered */
 }

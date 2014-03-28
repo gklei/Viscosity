@@ -11,11 +11,6 @@
 
 @implementation VISCViewController
 
-- (void)viewDidLoad
-{
-   [super viewDidLoad];
-}
-
 - (void)viewWillLayoutSubviews
 {
    [super viewWillLayoutSubviews];
@@ -24,7 +19,6 @@
    SKScene * scene = [VISCLevelSelectScene sceneWithSize:skView.bounds.size];
    scene.scaleMode = SKSceneScaleModeAspectFill;
    
-   // Present the scene.
    [skView presentScene:scene];
 }
 
@@ -35,17 +29,14 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+   {
       return UIInterfaceOrientationMaskAllButUpsideDown;
-   } else {
+   }
+   else
+   {
       return UIInterfaceOrientationMaskAll;
    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-   [super didReceiveMemoryWarning];
-   // Release any cached data, images, etc that aren't in use.
 }
 
 @end
