@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CBE324B2-8506-45F4-922E-51338026DFD5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Viscosity</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F9087CC7-6C79-4570-883C-D3785618C562</key>
+		<string>ssh://github.com/gregoryklein/Viscosity.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Viscosity.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F9087CC7-6C79-4570-883C-D3785618C562</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/gregoryklein/Viscosity.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F9087CC7-6C79-4570-883C-D3785618C562</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F9087CC7-6C79-4570-883C-D3785618C562</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Viscosity</string>
+		</dict>
+	</array>
+</dict>
+</plist>

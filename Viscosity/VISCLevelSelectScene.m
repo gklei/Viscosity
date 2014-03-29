@@ -7,6 +7,12 @@
 //
 
 #import "VISCLevelSelectScene.h"
+#import "VISCLevelOneScene.h"
+
+@interface VISCLevelSelectScene ()
+@property (strong, nonatomic) SKLabelNode* levelLabel;
+@property (assign, nonatomic) BOOL levelLabelTouched;
+@end
 
 @implementation VISCLevelSelectScene
 
@@ -35,24 +41,54 @@
 
 - (void)setupLevelLabelForLevelNumber:(NSUInteger)levelNumber
 {
-   SKLabelNode* levelLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
+   self.levelLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
    CGFloat xPosition = CGRectGetMidX(self.frame);
    CGFloat yPosition = CGRectGetMidY(self.frame) - CGRectGetHeight(self.frame)*.25;
-   levelLabel.position = CGPointMake(xPosition, yPosition);
-   levelLabel.fontSize = 14;
-   levelLabel.fontColor = [SKColor redColor];
-   levelLabel.text = [NSString stringWithFormat:@"Level %d", levelNumber];
+   self.levelLabel.position = CGPointMake(xPosition, yPosition);
+   self.levelLabel.fontSize = 14;
+   self.levelLabel.fontColor = [SKColor redColor];
+   self.levelLabel.text = [NSString stringWithFormat:@"Level %d", levelNumber];
    
-   [self addChild:levelLabel];
+   [self addChild:self.levelLabel];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+   UITouch* touch = [touches anyObject];
+   CGPoint touchPosition = [touch locationInNode:self];
+   if ([self.levelLabel containsPoint:touchPosition])
+   {
+      self.levelLabelTouched = YES;
+      self.levelLabel.fontColor = [SKColor whiteColor];
+   }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+   UITouch* touch = [touches anyObject];
+   CGPoint touchPosition = [touch locationInNode:self];
+   if (self.levelLabelTouched && [self.levelLabel containsPoint:touchPosition])
+   {
+      SKTransition *reveal = [SKTransition fadeWithDuration:.5];
+      VISCLevelOneScene *levelOneScene = [[VISCLevelOneScene alloc] initWithSize:self.size];
+      [self.scene.view presentScene:levelOneScene transition:reveal];
+   }
+
+   self.levelLabel.fontColor = [SKColor redColor];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+   UITouch* touch = [touches anyObject];
+   CGPoint touchPosition = [touch locationInNode:self];
+   if (![self.levelLabel containsPoint:touchPosition])
+   {
+      self.levelLabel.fontColor = [SKColor redColor];
+   }
 }
 
 - (void)update:(CFTimeInterval)currentTime
 {
-   /* Called before each frame is rendered */
 }
 
 @end

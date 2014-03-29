@@ -24,6 +24,7 @@
 		5BB00B3118E5DF9D002AC435 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0918E5DF9D002AC435 /* UIKit.framework */; };
 		5BB00B3918E5DF9D002AC435 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B3718E5DF9D002AC435 /* InfoPlist.strings */; };
 		5BB00B3B18E5DF9D002AC435 /* ViscosityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */; };
+		8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		5BB00B3618E5DF9D002AC435 /* ViscosityTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ViscosityTests-Info.plist"; sourceTree = "<group>"; };
 		5BB00B3818E5DF9D002AC435 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViscosityTests.m; sourceTree = "<group>"; };
+		8E39CAEC18E6940F00641AE4 /* VISCLevelOneScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCLevelOneScene.h; sourceTree = "<group>"; };
+		8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCLevelOneScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				5BB00B2018E5DF9D002AC435 /* VISCViewController.m */,
 				5BB00B2218E5DF9D002AC435 /* VISCLevelSelectScene.h */,
 				5BB00B2318E5DF9D002AC435 /* VISCLevelSelectScene.m */,
+				8E39CAEC18E6940F00641AE4 /* VISCLevelOneScene.h */,
+				8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */,
 				5BB00B2718E5DF9D002AC435 /* Images.xcassets */,
 				5BB00B0E18E5DF9D002AC435 /* Supporting Files */,
 			);
@@ -265,6 +270,7 @@
 			files = (
 				5BB00B1418E5DF9D002AC435 /* main.m in Sources */,
 				5BB00B2418E5DF9D002AC435 /* VISCLevelSelectScene.m in Sources */,
+				8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */,
 				5BB00B1818E5DF9D002AC435 /* VISCAppDelegate.m in Sources */,
 				5BB00B2118E5DF9D002AC435 /* VISCViewController.m in Sources */,
 			);
@@ -405,6 +411,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Viscosity/Viscosity-Prefix.pch";
 				INFOPLIST_FILE = "Viscosity/Viscosity-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -420,6 +427,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Viscosity/Viscosity-Prefix.pch";
 				INFOPLIST_FILE = "Viscosity/Viscosity-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -485,6 +493,7 @@
 				5BB00B4018E5DF9D002AC435 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5BB00B4118E5DF9D002AC435 /* Build configuration list for PBXNativeTarget "ViscosityTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +502,7 @@
 				5BB00B4318E5DF9D002AC435 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
