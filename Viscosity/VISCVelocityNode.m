@@ -10,4 +10,12 @@
 
 @implementation VISCVelocityNode
 
++ (instancetype)velocityNode
+{
+   VISCVelocityNode* velocityNode = [self spriteNodeWithImageNamed:@"expand_left"];
+   velocityNode.xScale = .5f;
+   velocityNode.yScale = .5f;
+   return velocityNode;
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface VISCVelocityNode : SKSpriteNode
 
++ (instancetype)velocityNode;
+
 @end
