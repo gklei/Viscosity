@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BAA46E7191D3C44008872C9 /* VISCVelocityNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA46E6191D3C44008872C9 /* VISCVelocityNode.m */; };
 		5BB00B0618E5DF9D002AC435 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0518E5DF9D002AC435 /* Foundation.framework */; };
 		5BB00B0818E5DF9D002AC435 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0718E5DF9D002AC435 /* CoreGraphics.framework */; };
 		5BB00B0A18E5DF9D002AC435 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB00B0918E5DF9D002AC435 /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5BAA46E5191D3C44008872C9 /* VISCVelocityNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCVelocityNode.h; sourceTree = "<group>"; };
+		5BAA46E6191D3C44008872C9 /* VISCVelocityNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCVelocityNode.m; sourceTree = "<group>"; };
 		5BB00B0218E5DF9D002AC435 /* Viscosity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Viscosity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB00B0518E5DF9D002AC435 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5BB00B0718E5DF9D002AC435 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +93,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BAA46E2191D3B54008872C9 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA46E5191D3C44008872C9 /* VISCVelocityNode.h */,
+				5BAA46E6191D3C44008872C9 /* VISCVelocityNode.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		5BAA46E3191D3B5C008872C9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B1F18E5DF9D002AC435 /* VISCViewController.h */,
+				5BB00B2018E5DF9D002AC435 /* VISCViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5BAA46E4191D3B68008872C9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5BB00B2218E5DF9D002AC435 /* VISCLevelSelectScene.h */,
+				5BB00B2318E5DF9D002AC435 /* VISCLevelSelectScene.m */,
+				8E39CAEC18E6940F00641AE4 /* VISCLevelOneScene.h */,
+				8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		5BB00AF918E5DF9D002AC435 = {
 			isa = PBXGroup;
 			children = (
@@ -124,16 +156,13 @@
 		5BB00B0D18E5DF9D002AC435 /* Viscosity */ = {
 			isa = PBXGroup;
 			children = (
+				5BAA46E4191D3B68008872C9 /* Scenes */,
+				5BAA46E3191D3B5C008872C9 /* View Controllers */,
+				5BAA46E2191D3B54008872C9 /* Controls */,
 				5BB00B1618E5DF9D002AC435 /* VISCAppDelegate.h */,
 				5BB00B1718E5DF9D002AC435 /* VISCAppDelegate.m */,
 				5BB00B1918E5DF9D002AC435 /* Main_iPhone.storyboard */,
 				5BB00B1C18E5DF9D002AC435 /* Main_iPad.storyboard */,
-				5BB00B1F18E5DF9D002AC435 /* VISCViewController.h */,
-				5BB00B2018E5DF9D002AC435 /* VISCViewController.m */,
-				5BB00B2218E5DF9D002AC435 /* VISCLevelSelectScene.h */,
-				5BB00B2318E5DF9D002AC435 /* VISCLevelSelectScene.m */,
-				8E39CAEC18E6940F00641AE4 /* VISCLevelOneScene.h */,
-				8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */,
 				5BB00B2718E5DF9D002AC435 /* Images.xcassets */,
 				5BB00B0E18E5DF9D002AC435 /* Supporting Files */,
 			);
@@ -271,6 +300,7 @@
 				5BB00B1418E5DF9D002AC435 /* main.m in Sources */,
 				5BB00B2418E5DF9D002AC435 /* VISCLevelSelectScene.m in Sources */,
 				8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */,
+				5BAA46E7191D3C44008872C9 /* VISCVelocityNode.m in Sources */,
 				5BB00B1818E5DF9D002AC435 /* VISCAppDelegate.m in Sources */,
 				5BB00B2118E5DF9D002AC435 /* VISCViewController.m in Sources */,
 			);
