@@ -7,6 +7,7 @@
 //
 
 #import "VISCLevelOneScene.h"
+#import "VISCVelocityNode.h"
 
 @interface VISCLevelOneScene ()
 @property (strong, nonatomic) SKLabelNode* levelOneLabel;
@@ -14,6 +15,7 @@
 
 @implementation VISCLevelOneScene
 
+#pragma mark - Init Methods
 - (id)initWithSize:(CGSize)size
 {
    if (self = [super initWithSize:size])
@@ -24,6 +26,7 @@
    return self;
 }
 
+#pragma mark - Setup Methods
 - (void)setupLabel
 {
    self.levelOneLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
@@ -35,6 +38,15 @@
    [self addChild:self.levelOneLabel];
 }
 
+- (void)setupVelocityNode
+{
+   VISCVelocityNode* velocityNode = [VISCVelocityNode velocityNode];
+   velocityNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+   
+   [self addChild:velocityNode];
+}
+
+#pragma SKScene Overrides
 - (void)didMoveToView:(SKView *)view
 {
    SKAction* wait = [SKAction waitForDuration:.5];
@@ -44,6 +56,7 @@
    [self.levelOneLabel runAction:waitAndFade completion:^
    {
       [self.levelOneLabel removeFromParent];
+      [self setupVelocityNode];
    }];
 }
 
