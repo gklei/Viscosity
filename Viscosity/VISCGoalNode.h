@@ -10,4 +10,6 @@
 
 @interface VISCGoalNode : SKShapeNode
 
++ (instancetype)goalWithLength:(CGFloat)length angle:(CGFloat)angle;
+
 @end

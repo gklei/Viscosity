@@ -10,4 +10,10 @@
 
 @implementation VISCGoalNode
 
++ (instancetype)goalWithLength:(CGFloat)length angle:(CGFloat)angle
+{
+   VISCGoalNode* goalNode = [self node];
+   return goalNode;
+}
+
 @end
