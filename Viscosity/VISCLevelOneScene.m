@@ -9,10 +9,6 @@
 #import "VISCLevelOneScene.h"
 #import "VISCVelocityNode.h"
 
-@interface VISCLevelOneScene ()
-@property (strong, nonatomic) SKLabelNode* levelOneLabel;
-@end
-
 @implementation VISCLevelOneScene
 
 #pragma mark - Init Methods
