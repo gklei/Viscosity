@@ -12,15 +12,21 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3, 3};
 
 @implementation VISCDirectionalNode
 
-#pragma mark - Init Methods
-+ (instancetype)directionalNode
++ (instancetype)node
 {
-   VISCDirectionalNode* directionalNode = [self node];
+   VISCDirectionalNode* directionalNode = [super node];
+
    directionalNode.strokeColor = [UIColor blackColor];
    directionalNode.lineWidth = 1.5;
    directionalNode.antialiased = NO;
 
    return directionalNode;
+}
+
+#pragma mark - Init Methods
++ (instancetype)directionalNode
+{
+   return [self node];
 }
 
 #pragma mark - Overridden Methods
