@@ -7,9 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "VISCDirectionalNode.h"
 
-@interface VISCGoalNode : SKShapeNode
+@interface VISCGoalNode : VISCDirectionalNode
 
-+ (instancetype)goalWithLength:(CGFloat)length angle:(CGFloat)angle;
++ (instancetype)goalNodeWithLength:(CGFloat)length angle:(CGFloat)angle;
 
 @end
