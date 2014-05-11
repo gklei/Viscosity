@@ -8,6 +8,8 @@
 
 #import "VISCDirectionalNode.h"
 
+static const CGFloat VISCDirectionalNodeDashPattern[] = {3, 3};
+
 @implementation VISCDirectionalNode
 
 #pragma mark - Init Methods
@@ -30,8 +32,7 @@
    CGPathMoveToPoint(pathToDraw, NULL, self.startPosition.x, self.startPosition.y);
    CGPathAddLineToPoint(pathToDraw, NULL, endPosition.x, endPosition.y);
 
-   self.path = pathToDraw;
-   CGPathRelease(pathToDraw);
+   self.path = CGPathCreateCopyByDashingPath(pathToDraw, NULL, 0, VISCDirectionalNodeDashPattern, 2);
 }
 
 @end
