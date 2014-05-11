@@ -9,5 +9,4 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface VISCLevelSelectScene : SKScene
-
 @end
