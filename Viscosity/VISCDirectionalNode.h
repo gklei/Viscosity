@@ -10,4 +10,9 @@
 
 @interface VISCDirectionalNode : SKShapeNode
 
+@property (nonatomic, assign) CGPoint startPosition;
+@property (nonatomic, assign) CGPoint endPosition;
+
++ (instancetype)directionalNode;
+
 @end
