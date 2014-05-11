@@ -32,7 +32,6 @@
 {
    VISCVelocityNode* velocityNode = [VISCVelocityNode velocityNode];
    velocityNode.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
-   
    [self addChild:velocityNode];
 }
 

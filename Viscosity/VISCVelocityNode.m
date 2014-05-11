@@ -44,13 +44,13 @@
 }
 
 #pragma mark - Overriden UIResponder Methods
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [self resetPhysicsBody];
    [super touchesBegan:touches withEvent:event];
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
    UITouch* touch = [touches anyObject];
    CGPoint touchPosition = [touch locationInNode:self];
@@ -59,7 +59,7 @@
    [super touchesMoved:touches withEvent:event];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
    self.physicsBody.velocity = CGVectorMake(self.directionalNode.endPosition.x*3, self.directionalNode.endPosition.y*3);
    self.directionalNode.endPosition = [self.parent convertPoint:self.position toNode:self];
