@@ -20,24 +20,14 @@
 {
    if (self = [super initWithSize:size])
    {
-      self.backgroundColor = [SKColor colorWithRed:.3 green:.3 blue:.5 alpha:1];
-      [self setupLabel];
+      self.backgroundColor = [SKColor whiteColor];
+      self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+      self.physicsWorld.gravity = CGVectorMake(0, 0);
    }
    return self;
 }
 
 #pragma mark - Setup Methods
-- (void)setupLabel
-{
-   self.levelOneLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
-   CGFloat xPosition = CGRectGetMidX(self.frame);
-   CGFloat yPosition = CGRectGetMidY(self.frame);
-   self.levelOneLabel.position = CGPointMake(xPosition, yPosition);
-   self.levelOneLabel.text = @"Level 1";
-
-   [self addChild:self.levelOneLabel];
-}
-
 - (void)setupVelocityNode
 {
    VISCVelocityNode* velocityNode = [VISCVelocityNode velocityNode];
@@ -49,15 +39,8 @@
 #pragma SKScene Overrides
 - (void)didMoveToView:(SKView *)view
 {
-   SKAction* wait = [SKAction waitForDuration:.5];
-   SKAction* fade = [SKAction fadeAlphaTo:0 duration:.5];
-   SKAction* waitAndFade = [SKAction sequence:@[wait, fade]];
-
-   [self.levelOneLabel runAction:waitAndFade completion:^
-   {
-      [self.levelOneLabel removeFromParent];
-      [self setupVelocityNode];
-   }];
+   [super didMoveToView:view];
+   [self setupVelocityNode];
 }
 
 - (void)update:(NSTimeInterval)currentTime
