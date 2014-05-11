@@ -9,6 +9,9 @@
 #import "VISCVelocityNode.h"
 #import "VISCDirectionalNode.h"
 
+static CGFloat VISCVelocityNodeSelectedScale = 2.0;
+static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
+
 @interface VISCVelocityNode ()
 @property (nonatomic, strong) VISCDirectionalNode* directionalNode;
 @end
@@ -19,6 +22,8 @@
 + (instancetype)velocityNode
 {
    VISCVelocityNode* velocityNode = [self spriteNodeWithImageNamed:@"cd"];
+   velocityNode.xScale = VISCVelocityNodeUnselectedScale;
+   velocityNode.yScale = VISCVelocityNodeUnselectedScale;
 
    velocityNode.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CGRectGetWidth(velocityNode.frame)*.5];
    velocityNode.physicsBody.linearDamping = .5;
@@ -47,6 +52,9 @@
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesBegan:touches withEvent:event];
+
+   SKAction* scaleUp = [SKAction scaleTo:VISCVelocityNodeSelectedScale duration:.3];
+   [self runAction:scaleUp];
    [self resetPhysicsBody];
 }
 
@@ -62,8 +70,13 @@
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesEnded:touches withEvent:event];
-   self.physicsBody.velocity = CGVectorMake(self.directionalNode.endPosition.x*3, self.directionalNode.endPosition.y*3);
+
+   SKAction* scaleDown = [SKAction scaleTo:VISCVelocityNodeUnselectedScale duration:.3];
+   [self runAction:scaleDown];
+
+   self.physicsBody.velocity = CGVectorMake(self.directionalNode.endPosition.x*4, self.directionalNode.endPosition.y*4);
    self.directionalNode.endPosition = [self.parent convertPoint:self.position toNode:self];
+   self.directionalNode.path = nil;
 }
 
 @end
