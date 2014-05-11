@@ -26,6 +26,7 @@
 		5BB00B3918E5DF9D002AC435 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5BB00B3718E5DF9D002AC435 /* InfoPlist.strings */; };
 		5BB00B3B18E5DF9D002AC435 /* ViscosityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */; };
 		8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */; };
+		8EF127B2191F3AE10070DC78 /* VISCDirectionalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViscosityTests.m; sourceTree = "<group>"; };
 		8E39CAEC18E6940F00641AE4 /* VISCLevelOneScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCLevelOneScene.h; sourceTree = "<group>"; };
 		8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCLevelOneScene.m; sourceTree = "<group>"; };
+		8EF127B0191F3AE10070DC78 /* VISCDirectionalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCDirectionalNode.h; sourceTree = "<group>"; };
+		8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCDirectionalNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 			children = (
 				5BAA46E5191D3C44008872C9 /* VISCVelocityNode.h */,
 				5BAA46E6191D3C44008872C9 /* VISCVelocityNode.m */,
+				8EF127B0191F3AE10070DC78 /* VISCDirectionalNode.h */,
+				8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 			files = (
 				5BB00B1418E5DF9D002AC435 /* main.m in Sources */,
 				5BB00B2418E5DF9D002AC435 /* VISCLevelSelectScene.m in Sources */,
+				8EF127B2191F3AE10070DC78 /* VISCDirectionalNode.m in Sources */,
 				8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */,
 				5BAA46E7191D3C44008872C9 /* VISCVelocityNode.m in Sources */,
 				5BB00B1818E5DF9D002AC435 /* VISCAppDelegate.m in Sources */,
