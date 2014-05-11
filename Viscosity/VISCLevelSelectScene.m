@@ -45,7 +45,7 @@
    CGFloat xPosition = CGRectGetMidX(self.frame);
    CGFloat yPosition = CGRectGetMidY(self.frame) - CGRectGetHeight(self.frame)*.25;
    self.levelLabel.position = CGPointMake(xPosition, yPosition);
-   self.levelLabel.fontSize = 14;
+   self.levelLabel.fontSize = 24;
    self.levelLabel.fontColor = [SKColor redColor];
    self.levelLabel.text = [NSString stringWithFormat:@"Level %d", levelNumber];
    
