@@ -10,4 +10,6 @@
 
 @interface VISCAnimatingDirectionalNode : VISCDirectionalNode
 
+- (void)startFillAnimation;
+
 @end

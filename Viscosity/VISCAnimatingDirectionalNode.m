@@ -10,4 +10,20 @@
 
 @implementation VISCAnimatingDirectionalNode
 
++ (instancetype)directionalNode
+{
+   VISCAnimatingDirectionalNode* directionalNode = [super directionalNode];
+   directionalNode.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
+
+   return directionalNode;
+}
+
+- (void)startFillAnimation
+{
+   [self.maskNode removeActionForKey:@"scaleUp"];
+   [self.maskNode setScale:0];
+   SKAction* scaleUp = [SKAction scaleTo:10 duration:2];
+   [self.maskNode runAction:scaleUp withKey:@"scaleUp"];
+}
+
 @end
