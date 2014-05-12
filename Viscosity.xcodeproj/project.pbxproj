@@ -256,6 +256,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "HardFlip, LLC";
 				TargetAttributes = {
+					5BB00B0118E5DF9D002AC435 = {
+						DevelopmentTeam = 45ET44N4TA;
+					};
 					5BB00B2C18E5DF9D002AC435 = {
 						TestTargetID = 5BB00B0118E5DF9D002AC435;
 					};
@@ -471,6 +474,7 @@
 				INFOPLIST_FILE = "Viscosity/Viscosity-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "A35CB15B-BFB6-4739-BBC6-F32C1BDCF018";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
