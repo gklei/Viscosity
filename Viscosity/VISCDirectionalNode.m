@@ -8,7 +8,7 @@
 
 #import "VISCDirectionalNode.h"
 
-static const CGFloat VISCDirectionalNodeDashPattern[] = {3, 3};
+static const CGFloat VISCDirectionalNodeDashPattern[] = {4, 2};
 
 @implementation VISCDirectionalNode
 

@@ -20,7 +20,7 @@
 {
    if (self = [super initWithSize:size])
    {
-      self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+      self.backgroundColor = [SKColor whiteColor];
       
       [self setupTitleLabel];
       [self setupLevelLabelForLevelNumber:1];
@@ -32,6 +32,7 @@
 {
    SKLabelNode* viscosityTitle = [SKLabelNode labelNodeWithFontNamed:@"Futura-Medium"];
    viscosityTitle.text = @"VISCOSITY";
+   viscosityTitle.fontColor = [SKColor blackColor];
    CGFloat xPosition = CGRectGetMidX(self.frame);
    CGFloat yPosition = CGRectGetMidY(self.frame) + CGRectGetHeight(self.frame)*.25;
    viscosityTitle.position = CGPointMake(xPosition, yPosition);
@@ -46,7 +47,7 @@
    CGFloat yPosition = CGRectGetMidY(self.frame) - CGRectGetHeight(self.frame)*.25;
    self.levelLabel.position = CGPointMake(xPosition, yPosition);
    self.levelLabel.fontSize = 24;
-   self.levelLabel.fontColor = [SKColor redColor];
+   self.levelLabel.fontColor = [SKColor blackColor];
    self.levelLabel.text = [NSString stringWithFormat:@"Level %d", levelNumber];
    
    [self addChild:self.levelLabel];
@@ -59,7 +60,7 @@
    if ([self.levelLabel containsPoint:touchPosition])
    {
       self.levelLabelTouched = YES;
-      self.levelLabel.fontColor = [SKColor whiteColor];
+      self.levelLabel.fontColor = [SKColor lightGrayColor];
    }
 }
 
@@ -74,7 +75,7 @@
       [self.scene.view presentScene:levelOneScene transition:reveal];
    }
 
-   self.levelLabel.fontColor = [SKColor redColor];
+   self.levelLabel.fontColor = [SKColor blackColor];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -83,7 +84,7 @@
    CGPoint touchPosition = [touch locationInNode:self];
    if (![self.levelLabel containsPoint:touchPosition])
    {
-      self.levelLabel.fontColor = [SKColor redColor];
+      self.levelLabel.fontColor = [SKColor blackColor];
    }
 }
 
