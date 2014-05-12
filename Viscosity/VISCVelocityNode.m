@@ -8,12 +8,14 @@
 
 #import "VISCVelocityNode.h"
 #import "VISCDirectionalNode.h"
+#import "VISCAnimatingDirectionalNode.h"
 
 static CGFloat VISCVelocityNodeSelectedScale = 2.0;
 static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 
 @interface VISCVelocityNode ()
-@property (nonatomic, strong) VISCDirectionalNode* directionalNode;
+@property (nonatomic, strong) VISCDirectionalNode* visibleDirectionalNode;
+@property (nonatomic, strong) VISCAnimatingDirectionalNode* animatingDirectionalNode;
 @end
 
 @implementation VISCVelocityNode
@@ -31,11 +33,18 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    velocityNode.physicsBody.friction = .5;
    velocityNode.userInteractionEnabled = YES;
 
-   VISCDirectionalNode* directionalNode = [VISCDirectionalNode directionalNode];
-   directionalNode.startPosition = velocityNode.position;
+   VISCDirectionalNode* visibleDirectionalNode = [VISCDirectionalNode directionalNode];
+   visibleDirectionalNode.startPosition = velocityNode.position;
 
-   velocityNode.directionalNode = directionalNode;
-   [velocityNode addChild:directionalNode];
+   VISCAnimatingDirectionalNode* animatingDirectionalNode = [VISCAnimatingDirectionalNode directionalNode];
+   animatingDirectionalNode.startPosition = velocityNode.position;
+   animatingDirectionalNode.color = [UIColor blackColor];
+
+   velocityNode.visibleDirectionalNode = visibleDirectionalNode;
+   velocityNode.animatingDirectionalNode = animatingDirectionalNode;
+
+   [velocityNode addChild:visibleDirectionalNode];
+   [velocityNode addChild:animatingDirectionalNode];
 
    return velocityNode;
 }
@@ -56,6 +65,8 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    SKAction* scaleUp = [SKAction scaleTo:VISCVelocityNodeSelectedScale duration:.3];
    [self runAction:scaleUp];
    [self resetPhysicsBody];
+   [self.animatingDirectionalNode startFillAnimation];
+
 }
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
@@ -64,7 +75,8 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 
    UITouch* touch = [touches anyObject];
    CGPoint touchPosition = [touch locationInNode:self];
-   self.directionalNode.endPosition = touchPosition;
+   self.animatingDirectionalNode.endPosition = touchPosition;
+   self.visibleDirectionalNode.endPosition = touchPosition;
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
@@ -74,9 +86,11 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    SKAction* scaleDown = [SKAction scaleTo:VISCVelocityNodeUnselectedScale duration:.3];
    [self runAction:scaleDown];
 
-   self.physicsBody.velocity = CGVectorMake(self.directionalNode.endPosition.x*4, self.directionalNode.endPosition.y*4);
-   self.directionalNode.endPosition = [self.parent convertPoint:self.position toNode:self];
-   self.directionalNode.path = nil;
+   self.physicsBody.velocity = CGVectorMake(self.visibleDirectionalNode.endPosition.x*4, self.visibleDirectionalNode.endPosition.y*4);
+   self.visibleDirectionalNode.endPosition = [self.parent convertPoint:self.position toNode:self];
+   
+   [self.visibleDirectionalNode resetPath];
+   [self.animatingDirectionalNode resetPath];
 }
 
 @end
