@@ -8,7 +8,11 @@
 
 #import "VISCDirectionalNode.h"
 
-static const CGFloat VISCDirectionalNodeDashPattern[] = {4, 2};
+static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
+
+@interface VISCDirectionalNode ()
+@property (strong, nonatomic) SKShapeNode* shapeNode;
+@end
 
 @implementation VISCDirectionalNode
 
@@ -16,10 +20,12 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {4, 2};
 {
    VISCDirectionalNode* directionalNode = [super node];
 
-   directionalNode.strokeColor = [UIColor blackColor];
-   directionalNode.lineWidth = 1.5;
-   directionalNode.antialiased = NO;
+   directionalNode.shapeNode = [SKShapeNode node];
+   directionalNode.shapeNode.strokeColor = [UIColor lightGrayColor];
+   directionalNode.shapeNode.lineWidth = 1.5;
+   directionalNode.shapeNode.antialiased = NO;
 
+   [directionalNode addChild:directionalNode.shapeNode];
    return directionalNode;
 }
 
@@ -38,7 +44,20 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {4, 2};
    CGPathMoveToPoint(pathToDraw, NULL, self.startPosition.x, self.startPosition.y);
    CGPathAddLineToPoint(pathToDraw, NULL, endPosition.x, endPosition.y);
 
-   self.path = CGPathCreateCopyByDashingPath(pathToDraw, NULL, 0, VISCDirectionalNodeDashPattern, 2);
+//   self.path = CGPathCreateCopyByDashingPath(pathToDraw, NULL, 0, VISCDirectionalNodeDashPattern, 2);
+   self.shapeNode.path = pathToDraw;
+}
+
+#pragma mark - Property Overrides
+- (void)setColor:(SKColor*)color
+{
+   self.shapeNode.strokeColor = color;
+}
+
+#pragma mark - Public Class Methods
+- (void)resetPath
+{
+   self.shapeNode.path = nil;
 }
 
 @end

@@ -8,11 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface VISCDirectionalNode : SKShapeNode
+@interface VISCDirectionalNode : SKCropNode
 
 @property (nonatomic, assign) CGPoint startPosition;
 @property (nonatomic, assign) CGPoint endPosition;
+@property (nonatomic, assign) SKColor *color;
 
 + (instancetype)directionalNode;
+- (void)resetPath;
 
 @end
