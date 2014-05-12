@@ -27,7 +27,7 @@
 		5BB00B3B18E5DF9D002AC435 /* ViscosityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00B3A18E5DF9D002AC435 /* ViscosityTests.m */; };
 		8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */; };
 		8EF127B2191F3AE10070DC78 /* VISCDirectionalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */; };
-		8EF127B8191F4C170070DC78 /* VISCGoalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF127B7191F4C170070DC78 /* VISCGoalNode.m */; };
+		8EF127BE1920715C0070DC78 /* VISCAnimatingDirectionalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF127BD1920715C0070DC78 /* VISCAnimatingDirectionalNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +70,8 @@
 		8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCLevelOneScene.m; sourceTree = "<group>"; };
 		8EF127B0191F3AE10070DC78 /* VISCDirectionalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCDirectionalNode.h; sourceTree = "<group>"; };
 		8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCDirectionalNode.m; sourceTree = "<group>"; };
-		8EF127B6191F4C170070DC78 /* VISCGoalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCGoalNode.h; sourceTree = "<group>"; };
-		8EF127B7191F4C170070DC78 /* VISCGoalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCGoalNode.m; sourceTree = "<group>"; };
+		8EF127BC1920715C0070DC78 /* VISCAnimatingDirectionalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCAnimatingDirectionalNode.h; sourceTree = "<group>"; };
+		8EF127BD1920715C0070DC78 /* VISCAnimatingDirectionalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCAnimatingDirectionalNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,12 +102,12 @@
 		5BAA46E2191D3B54008872C9 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				8EF127B6191F4C170070DC78 /* VISCGoalNode.h */,
-				8EF127B7191F4C170070DC78 /* VISCGoalNode.m */,
 				5BAA46E5191D3C44008872C9 /* VISCVelocityNode.h */,
 				5BAA46E6191D3C44008872C9 /* VISCVelocityNode.m */,
 				8EF127B0191F3AE10070DC78 /* VISCDirectionalNode.h */,
 				8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */,
+				8EF127BC1920715C0070DC78 /* VISCAnimatingDirectionalNode.h */,
+				8EF127BD1920715C0070DC78 /* VISCAnimatingDirectionalNode.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -312,12 +312,12 @@
 			files = (
 				5BB00B1418E5DF9D002AC435 /* main.m in Sources */,
 				5BB00B2418E5DF9D002AC435 /* VISCLevelSelectScene.m in Sources */,
+				8EF127BE1920715C0070DC78 /* VISCAnimatingDirectionalNode.m in Sources */,
 				8EF127B2191F3AE10070DC78 /* VISCDirectionalNode.m in Sources */,
 				8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */,
 				5BAA46E7191D3C44008872C9 /* VISCVelocityNode.m in Sources */,
 				5BB00B1818E5DF9D002AC435 /* VISCAppDelegate.m in Sources */,
 				5BB00B2118E5DF9D002AC435 /* VISCViewController.m in Sources */,
-				8EF127B8191F4C170070DC78 /* VISCGoalNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
