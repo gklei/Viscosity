@@ -17,14 +17,19 @@
    if (self = [super initWithSize:size])
    {
       self.backgroundColor = [SKColor whiteColor];
-      self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-      self.physicsBody.friction = 0;
-      self.physicsWorld.gravity = CGVectorMake(0, 0);
+      [self setupPhysicsBody];
    }
    return self;
 }
 
 #pragma mark - Setup Methods
+- (void)setupPhysicsBody
+{
+   self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+   self.physicsBody.friction = 0;
+   self.physicsWorld.gravity = CGVectorMake(0, 0);
+}
+
 - (void)setupVelocityNode
 {
    VISCVelocityNode* velocityNode = [VISCVelocityNode velocityNode];

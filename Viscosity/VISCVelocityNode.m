@@ -21,7 +21,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 
 @implementation VISCVelocityNode
 
-#pragma mark - Init Methods
+#pragma mark - Class Methods
 + (instancetype)velocityNode
 {
    VISCVelocityNode* velocityNode = [self spriteNodeWithImageNamed:@"cd"];
@@ -67,7 +67,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    self.physicsBody.velocity = CGVectorMake(0, 0);
 }
 
-#pragma mark - Overriden UIResponder Methods
+#pragma mark - Overridden UIResponder Methods
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesBegan:touches withEvent:event];

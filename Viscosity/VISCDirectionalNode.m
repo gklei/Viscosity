@@ -16,6 +16,7 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 
 @implementation VISCDirectionalNode
 
+#pragma mark - Overridden Class Methods
 + (instancetype)node
 {
    VISCDirectionalNode* directionalNode = [super node];
@@ -29,26 +30,25 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
    return directionalNode;
 }
 
-#pragma mark - Init Methods
+#pragma mark - Class Methods
 + (instancetype)directionalNode
 {
    return [self node];
 }
 
-#pragma mark - Overridden Methods
+#pragma mark - Property Overrides
 - (void)setEndPosition:(CGPoint)endPosition
 {
    _endPosition = endPosition;
    [self setShapeNodePathWithStartPosition:self.startPosition endPosition:endPosition];
 }
 
-#pragma mark - Property Overrides
 - (void)setColor:(SKColor*)color
 {
    self.shapeNode.strokeColor = color;
 }
 
-#pragma mark - Public Class Methods
+#pragma mark - Public Instance Methods
 - (void)resetPath
 {
    self.shapeNode.path = nil;

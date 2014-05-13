@@ -17,6 +17,7 @@
 
 @implementation VISCVelocityFuse
 
+#pragma mark - Class Methods
 + (instancetype)velocityFuse
 {
    VISCVelocityFuse* velocityTrigger = [self node];
@@ -33,6 +34,7 @@
    return velocityTrigger;
 }
 
+#pragma mark - Propery Overrides
 - (void)setEndPoint:(CGPoint)endPoint
 {
    _endPoint = endPoint;
@@ -40,6 +42,7 @@
    self.animatingDirectionalNode.endPosition = endPoint;
 }
 
+#pragma mark - Public Instance Methods
 - (void)ignite
 {
    [self.animatingDirectionalNode startFillAnimation];
