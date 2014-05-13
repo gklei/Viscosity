@@ -39,13 +39,7 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 - (void)setEndPosition:(CGPoint)endPosition
 {
    _endPosition = endPosition;
-   
-   CGMutablePathRef pathToDraw = CGPathCreateMutable();
-   CGPathMoveToPoint(pathToDraw, NULL, self.startPosition.x, self.startPosition.y);
-   CGPathAddLineToPoint(pathToDraw, NULL, endPosition.x, endPosition.y);
-
-//   self.path = CGPathCreateCopyByDashingPath(pathToDraw, NULL, 0, VISCDirectionalNodeDashPattern, 2);
-   self.shapeNode.path = pathToDraw;
+   [self setShapeNodePathWithStartPosition:self.startPosition endPosition:endPosition];
 }
 
 #pragma mark - Property Overrides
@@ -58,6 +52,16 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 - (void)resetPath
 {
    self.shapeNode.path = nil;
+}
+
+#pragma mark - Helper Methods
+- (void)setShapeNodePathWithStartPosition:(CGPoint)startPosition endPosition:(CGPoint)endPosition
+{
+   CGMutablePathRef path = CGPathCreateMutable();
+   CGPathMoveToPoint(path, NULL, startPosition.x, startPosition.y);
+   CGPathAddLineToPoint(path, NULL, endPosition.x, endPosition.y);
+
+   self.shapeNode.path = self.dashed ? CGPathCreateCopyByDashingPath(path, NULL, 0, VISCDirectionalNodeDashPattern, 2) : path;
 }
 
 @end
