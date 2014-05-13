@@ -28,6 +28,7 @@
 		8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E39CAED18E6940F00641AE4 /* VISCLevelOneScene.m */; };
 		8EF127B2191F3AE10070DC78 /* VISCDirectionalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */; };
 		8EF127BE1920715C0070DC78 /* VISCAnimatingDirectionalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF127BD1920715C0070DC78 /* VISCAnimatingDirectionalNode.m */; };
+		8EF127C119219FAA0070DC78 /* VISCVelocityTrigger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF127C019219FAA0070DC78 /* VISCVelocityTrigger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCDirectionalNode.m; sourceTree = "<group>"; };
 		8EF127BC1920715C0070DC78 /* VISCAnimatingDirectionalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCAnimatingDirectionalNode.h; sourceTree = "<group>"; };
 		8EF127BD1920715C0070DC78 /* VISCAnimatingDirectionalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCAnimatingDirectionalNode.m; sourceTree = "<group>"; };
+		8EF127BF19219FAA0070DC78 /* VISCVelocityTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISCVelocityTrigger.h; sourceTree = "<group>"; };
+		8EF127C019219FAA0070DC78 /* VISCVelocityTrigger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISCVelocityTrigger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 			children = (
 				5BAA46E5191D3C44008872C9 /* VISCVelocityNode.h */,
 				5BAA46E6191D3C44008872C9 /* VISCVelocityNode.m */,
+				8EF127BF19219FAA0070DC78 /* VISCVelocityTrigger.h */,
+				8EF127C019219FAA0070DC78 /* VISCVelocityTrigger.m */,
 				8EF127B0191F3AE10070DC78 /* VISCDirectionalNode.h */,
 				8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */,
 				8EF127BC1920715C0070DC78 /* VISCAnimatingDirectionalNode.h */,
@@ -312,6 +317,7 @@
 			files = (
 				5BB00B1418E5DF9D002AC435 /* main.m in Sources */,
 				5BB00B2418E5DF9D002AC435 /* VISCLevelSelectScene.m in Sources */,
+				8EF127C119219FAA0070DC78 /* VISCVelocityTrigger.m in Sources */,
 				8EF127BE1920715C0070DC78 /* VISCAnimatingDirectionalNode.m in Sources */,
 				8EF127B2191F3AE10070DC78 /* VISCDirectionalNode.m in Sources */,
 				8E39CAEE18E6940F00641AE4 /* VISCLevelOneScene.m in Sources */,
