@@ -13,8 +13,9 @@
 + (instancetype)directionalNode
 {
    VISCAnimatingDirectionalNode* directionalNode = [super directionalNode];
-   directionalNode.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
-   directionalNode.animationDuration = 1;
+   directionalNode.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"CircleMask"];
+   directionalNode.color = [UIColor blackColor];
+   directionalNode.animationDuration = 4;
 
    return directionalNode;
 }
@@ -23,7 +24,7 @@
 {
    [self.maskNode removeActionForKey:@"scaleUp"];
    [self.maskNode setScale:0];
-   SKAction* scaleUp = [SKAction scaleTo:10 duration:self.animationDuration];
+   SKAction* scaleUp = [SKAction scaleTo:5 duration:self.animationDuration];
    SKAction* wait = [SKAction waitForDuration:.2];
    [self.maskNode runAction:[SKAction sequence:@[wait, scaleUp]] withKey:@"scaleUp"];
 }
