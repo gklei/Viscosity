@@ -48,8 +48,9 @@
    self.levelLabel.position = CGPointMake(xPosition, yPosition);
    self.levelLabel.fontSize = 24;
    self.levelLabel.fontColor = [SKColor blackColor];
-   self.levelLabel.text = [NSString stringWithFormat:@"Level %d", levelNumber];
-   
+//   self.levelLabel.text = [NSString stringWithFormat:@"Level %d", levelNumber];
+   self.levelLabel.text = @"p l a y";
+
    [self addChild:self.levelLabel];
 }
 
