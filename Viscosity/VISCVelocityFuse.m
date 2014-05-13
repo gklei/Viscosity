@@ -6,8 +6,49 @@
 //  Copyright (c) 2014 HardFlip, LLC. All rights reserved.
 //
 
-#import "VISCVelocityTrigger.h"
+#import "VISCVelocityFuse.h"
+#import "VISCAnimatingDirectionalNode.h"
+#import "VISCVelocityFuse.h"
 
-@implementation VISCVelocityTrigger
+@interface VISCVelocityFuse ()
+@property (nonatomic, strong) VISCDirectionalNode* visibleDirectionalNode;
+@property (nonatomic, strong) VISCAnimatingDirectionalNode* animatingDirectionalNode;
+@end
+
+@implementation VISCVelocityFuse
+
++ (instancetype)velocityFuse
+{
+   VISCVelocityFuse* velocityTrigger = [self node];
+
+   velocityTrigger.visibleDirectionalNode = [VISCDirectionalNode directionalNode];
+   velocityTrigger.visibleDirectionalNode.startPosition = velocityTrigger.position;
+
+   velocityTrigger.animatingDirectionalNode = [VISCAnimatingDirectionalNode directionalNode];
+   velocityTrigger.animatingDirectionalNode.startPosition = velocityTrigger.position;
+
+   [velocityTrigger addChild:velocityTrigger.visibleDirectionalNode];
+   [velocityTrigger addChild:velocityTrigger.animatingDirectionalNode];
+
+   return velocityTrigger;
+}
+
+- (void)setEndPoint:(CGPoint)endPoint
+{
+   _endPoint = endPoint;
+   self.visibleDirectionalNode.endPosition = endPoint;
+   self.animatingDirectionalNode.endPosition = endPoint;
+}
+
+- (void)ignite
+{
+   [self.animatingDirectionalNode startFillAnimation];
+}
+
+- (void)reset
+{
+   [self.visibleDirectionalNode resetPath];
+   [self.animatingDirectionalNode resetPath];
+}
 
 @end

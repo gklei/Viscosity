@@ -8,6 +8,12 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface VISCVelocityTrigger : SKNode
+@interface VISCVelocityFuse : SKNode
+
+@property (nonatomic, assign) CGPoint endPoint;
+
++ (instancetype)velocityFuse;
+- (void)ignite;
+- (void)reset;
 
 @end
