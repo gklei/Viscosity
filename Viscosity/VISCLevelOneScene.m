@@ -18,6 +18,7 @@
    {
       self.backgroundColor = [SKColor whiteColor];
       self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+      self.physicsBody.friction = 0;
       self.physicsWorld.gravity = CGVectorMake(0, 0);
    }
    return self;
