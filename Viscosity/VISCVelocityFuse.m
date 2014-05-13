@@ -13,6 +13,7 @@
 @interface VISCVelocityFuse ()
 @property (nonatomic, strong) VISCDirectionalNode* visibleDirectionalNode;
 @property (nonatomic, strong) VISCAnimatingDirectionalNode* animatingDirectionalNode;
+@property (nonatomic, strong) NSArray* directionalNodes;
 @end
 
 @implementation VISCVelocityFuse
@@ -21,25 +22,30 @@
 + (instancetype)velocityFuse
 {
    VISCVelocityFuse* velocityTrigger = [self node];
-
-   velocityTrigger.visibleDirectionalNode = [VISCDirectionalNode directionalNode];
-   velocityTrigger.visibleDirectionalNode.startPosition = velocityTrigger.position;
-
-   velocityTrigger.animatingDirectionalNode = [VISCAnimatingDirectionalNode directionalNode];
-   velocityTrigger.animatingDirectionalNode.startPosition = velocityTrigger.position;
-
-   [velocityTrigger addChild:velocityTrigger.visibleDirectionalNode];
-   [velocityTrigger addChild:velocityTrigger.animatingDirectionalNode];
+   [velocityTrigger setupDirectionalNodes];
 
    return velocityTrigger;
+}
+
+#pragma mark - Setup Methods
+- (void)setupDirectionalNodes
+{
+   self.visibleDirectionalNode = [VISCDirectionalNode directionalNode];
+   self.animatingDirectionalNode = [VISCAnimatingDirectionalNode directionalNode];
+
+   self.directionalNodes = @[self.visibleDirectionalNode, self.animatingDirectionalNode];
+
+   [self addChild:self.visibleDirectionalNode];
+   [self addChild:self.animatingDirectionalNode];
 }
 
 #pragma mark - Propery Overrides
 - (void)setEndPoint:(CGPoint)endPoint
 {
    _endPoint = endPoint;
-   self.visibleDirectionalNode.endPosition = endPoint;
-   self.animatingDirectionalNode.endPosition = endPoint;
+   [self.directionalNodes enumerateObjectsUsingBlock:^(VISCDirectionalNode* directionalNode, NSUInteger idx, BOOL *stop) {
+      directionalNode.endPosition = endPoint;
+   }];
 }
 
 #pragma mark - Public Instance Methods
@@ -50,8 +56,10 @@
 
 - (void)reset
 {
-   [self.visibleDirectionalNode resetPath];
-   [self.animatingDirectionalNode resetPath];
+   self.endPoint = CGPointZero;
+   [self.directionalNodes enumerateObjectsUsingBlock:^(VISCDirectionalNode* directionalNode, NSUInteger idx, BOOL *stop) {
+      [directionalNode resetPath];
+   }];
 }
 
 @end

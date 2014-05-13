@@ -10,7 +10,6 @@
 
 @interface VISCDirectionalNode : SKCropNode
 
-@property (nonatomic, assign) CGPoint startPosition;
 @property (nonatomic, assign) CGPoint endPosition;
 @property (nonatomic, assign) BOOL dashed;
 @property (nonatomic, strong) SKColor* color;

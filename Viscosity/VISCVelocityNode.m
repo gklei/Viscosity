@@ -30,6 +30,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    [velocityNode setupScalingAnimation];
    [velocityNode setupPhysicsBody];
    [velocityNode setupVelocityFuse];
+   velocityNode.userInteractionEnabled = YES;
 
    return velocityNode;
 }
@@ -42,7 +43,6 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    self.physicsBody.restitution = .8;
    self.physicsBody.friction = .5;
    self.physicsBody.allowsRotation = NO;
-   self.userInteractionEnabled = YES;
 }
 
 - (void)setupScale
@@ -67,33 +67,43 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    self.physicsBody.velocity = CGVectorMake(0, 0);
 }
 
+- (void)scaleUp
+{
+   [self runAction:self.scalingAnimation];
+}
+
+- (void)scaleDown
+{
+   [self runAction:[self.scalingAnimation reversedAction]];
+}
+
+- (void)fire
+{
+   self.physicsBody.velocity = CGVectorMake(self.velocityFuse.endPoint.x*4, self.velocityFuse.endPoint.y*4);
+}
+
 #pragma mark - Overridden UIResponder Methods
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesBegan:touches withEvent:event];
 
-   [self runAction:self.scalingAnimation];
    [self stop];
+   [self scaleUp];
    [self.velocityFuse ignite];
-
 }
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesMoved:touches withEvent:event];
-
-   CGPoint touchPosition = [[touches anyObject] locationInNode:self];
-   self.velocityFuse.endPoint = touchPosition;
+   self.velocityFuse.endPoint = [[touches anyObject] locationInNode:self];
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesEnded:touches withEvent:event];
 
-   [self runAction:[self.scalingAnimation reversedAction]];
-
-   self.physicsBody.velocity = CGVectorMake(self.velocityFuse.endPoint.x*4, self.velocityFuse.endPoint.y*4);
-   self.velocityFuse.endPoint = [self.parent convertPoint:self.position toNode:self];
+   [self scaleDown];
+   [self fire];
    [self.velocityFuse reset];
 }
 

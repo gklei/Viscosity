@@ -8,28 +8,49 @@
 
 #import "VISCAnimatingDirectionalNode.h"
 
+static NSString* const VISCScaleMaskAnimationKey = @"VISCScaleMaskAnimationKey";
+static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
+
+@interface VISCAnimatingDirectionalNode ()
+@property (strong, nonatomic) SKAction* scaleMaskAnimationSequence;
+@end
+
 @implementation VISCAnimatingDirectionalNode
 
 #pragma mark - Overridden DirectionalNode Class Methods
 + (instancetype)directionalNode
 {
-   VISCAnimatingDirectionalNode* directionalNode = [super directionalNode];
-   directionalNode.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"CircleMask"];
-   directionalNode.color = [UIColor blackColor];
-   directionalNode.animationDuration = 5;
-   directionalNode.dashed = YES;
+   VISCAnimatingDirectionalNode* animatingDirectionalNode = [super directionalNode];
+   [animatingDirectionalNode setupProperties];
 
-   return directionalNode;
+   return animatingDirectionalNode;
+}
+
+#pragma mark - Setup Methods
+- (void)setupProperties
+{
+   self.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"CircleMask"];
+   self.color = [UIColor blackColor];
+   self.animationDuration = 5;
+   self.dashed = YES;
+
+   SKAction* scaleUp = [SKAction scaleTo:5 duration:self.animationDuration];
+   SKAction* wait = [SKAction waitForDuration:VISCDelayBeforeScaleMaskAniamtion];
+   self.scaleMaskAnimationSequence = [SKAction sequence:@[wait, scaleUp]];
+}
+
+#pragma mark - Helper Methods
+- (void)resetMaskNode
+{
+   [self.maskNode removeActionForKey:VISCScaleMaskAnimationKey];
+   [self.maskNode setScale:0];
 }
 
 #pragma mark - Public Instance Methods
 - (void)startFillAnimation
 {
-   [self.maskNode removeActionForKey:@"scaleUp"];
-   [self.maskNode setScale:0];
-   SKAction* scaleUp = [SKAction scaleTo:5 duration:self.animationDuration];
-   SKAction* wait = [SKAction waitForDuration:.25];
-   [self.maskNode runAction:[SKAction sequence:@[wait, scaleUp]] withKey:@"scaleUp"];
+   [self resetMaskNode];
+   [self.maskNode runAction:self.scaleMaskAnimationSequence withKey:VISCScaleMaskAnimationKey];
 }
 
 @end

@@ -20,14 +20,19 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 + (instancetype)node
 {
    VISCDirectionalNode* directionalNode = [super node];
+   [directionalNode setupShapeNode];
 
-   directionalNode.shapeNode = [SKShapeNode node];
-   directionalNode.shapeNode.strokeColor = [UIColor lightGrayColor];
-   directionalNode.shapeNode.lineWidth = 1.5;
-   directionalNode.shapeNode.antialiased = NO;
-
-   [directionalNode addChild:directionalNode.shapeNode];
    return directionalNode;
+}
+
+#pragma mark - Setup Methods
+- (void)setupShapeNode
+{
+   self.shapeNode = [SKShapeNode node];
+   self.shapeNode.strokeColor = [UIColor lightGrayColor];
+   self.shapeNode.lineWidth = 1.5;
+   self.shapeNode.antialiased = NO;
+   [self addChild:self.shapeNode];
 }
 
 #pragma mark - Class Methods
@@ -40,7 +45,7 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 - (void)setEndPosition:(CGPoint)endPosition
 {
    _endPosition = endPosition;
-   [self setShapeNodePathWithStartPosition:self.startPosition endPosition:endPosition];
+   [self updateShapeNodePathWithStartPosition:self.position endPosition:endPosition];
 }
 
 - (void)setColor:(SKColor*)color
@@ -48,20 +53,20 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
    self.shapeNode.strokeColor = color;
 }
 
-#pragma mark - Public Instance Methods
-- (void)resetPath
-{
-   self.shapeNode.path = nil;
-}
-
 #pragma mark - Helper Methods
-- (void)setShapeNodePathWithStartPosition:(CGPoint)startPosition endPosition:(CGPoint)endPosition
+- (void)updateShapeNodePathWithStartPosition:(CGPoint)startPosition endPosition:(CGPoint)endPosition
 {
    CGMutablePathRef path = CGPathCreateMutable();
    CGPathMoveToPoint(path, NULL, startPosition.x, startPosition.y);
    CGPathAddLineToPoint(path, NULL, endPosition.x, endPosition.y);
 
    self.shapeNode.path = self.dashed ? CGPathCreateCopyByDashingPath(path, NULL, 0, VISCDirectionalNodeDashPattern, 2) : path;
+}
+
+#pragma mark - Public Instance Methods
+- (void)resetPath
+{
+   self.shapeNode.path = nil;
 }
 
 @end
