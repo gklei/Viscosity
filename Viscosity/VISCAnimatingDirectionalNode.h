@@ -10,6 +10,8 @@
 
 @interface VISCAnimatingDirectionalNode : VISCDirectionalNode
 
+@property (nonatomic, assign) CGFloat animationDuration;
+
 - (void)startFillAnimation;
 
 @end

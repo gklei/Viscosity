@@ -14,6 +14,7 @@
 {
    VISCAnimatingDirectionalNode* directionalNode = [super directionalNode];
    directionalNode.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"circle"];
+   directionalNode.animationDuration = 1;
 
    return directionalNode;
 }
@@ -22,8 +23,9 @@
 {
    [self.maskNode removeActionForKey:@"scaleUp"];
    [self.maskNode setScale:0];
-   SKAction* scaleUp = [SKAction scaleTo:10 duration:2];
-   [self.maskNode runAction:scaleUp withKey:@"scaleUp"];
+   SKAction* scaleUp = [SKAction scaleTo:10 duration:self.animationDuration];
+   SKAction* wait = [SKAction waitForDuration:.2];
+   [self.maskNode runAction:[SKAction sequence:@[wait, scaleUp]] withKey:@"scaleUp"];
 }
 
 @end
