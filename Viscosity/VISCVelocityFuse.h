@@ -11,9 +11,13 @@
 @interface VISCVelocityFuse : SKNode
 
 @property (nonatomic, assign) CGPoint endPoint;
+@property (nonatomic, copy) dispatch_block_t fuseCompletionHandler;
+@property (nonatomic, copy) dispatch_block_t fuseCanceledHandler;
 
 + (instancetype)velocityFuse;
-- (void)ignite;
-- (void)reset;
+
+- (void)prepareForIgnition;
+- (void)igniteIfNotIgnited;
+- (void)resetIgnition;
 
 @end

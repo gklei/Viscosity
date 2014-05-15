@@ -58,6 +58,17 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 - (void)setupVelocityFuse
 {
    self.velocityFuse = [VISCVelocityFuse velocityFuse];
+
+   __weak typeof(self) weakSelf = self;
+   self.velocityFuse.fuseCompletionHandler = ^{
+      [weakSelf scaleDown];
+      [weakSelf fire];
+   };
+
+   self.velocityFuse.fuseCanceledHandler = ^{
+      [weakSelf scaleDown];
+   };
+
    [self addChild:self.velocityFuse];
 }
 
@@ -89,22 +100,21 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 
    [self stop];
    [self scaleUp];
-   [self.velocityFuse ignite];
+   [self.velocityFuse prepareForIgnition];
 }
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesMoved:touches withEvent:event];
+
+   [self.velocityFuse igniteIfNotIgnited];
    self.velocityFuse.endPoint = [[touches anyObject] locationInNode:self];
 }
 
-- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
    [super touchesEnded:touches withEvent:event];
-
-   [self scaleDown];
-   [self fire];
-   [self.velocityFuse reset];
+   [self.velocityFuse resetIgnition];
 }
 
 @end

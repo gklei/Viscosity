@@ -9,10 +9,11 @@
 #import "VISCAnimatingDirectionalNode.h"
 
 static NSString* const VISCScaleMaskAnimationKey = @"VISCScaleMaskAnimationKey";
-static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
+static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .1f;
 
 @interface VISCAnimatingDirectionalNode ()
 @property (strong, nonatomic) SKAction* scaleMaskAnimationSequence;
+@property (nonatomic, assign) BOOL animationFinished;
 @end
 
 @implementation VISCAnimatingDirectionalNode
@@ -31,12 +32,29 @@ static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
 {
    self.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"CircleMask"];
    self.color = [UIColor blackColor];
-   self.animationDuration = 5;
+   self.animationDuration = 2;
    self.dashed = YES;
 
-   SKAction* scaleUp = [SKAction scaleTo:5 duration:self.animationDuration];
    SKAction* wait = [SKAction waitForDuration:VISCDelayBeforeScaleMaskAniamtion];
-   self.scaleMaskAnimationSequence = [SKAction sequence:@[wait, scaleUp]];
+   SKAction* scaleUp = [SKAction scaleTo:5 duration:self.animationDuration];
+
+   __weak typeof(self) weakSelf = self;
+   SKAction* fillCompleteCheck = [SKAction customActionWithDuration:scaleUp.duration
+                                                   actionBlock:^(SKNode *node, CGFloat elapsedTime)
+   {
+      CGFloat lineLength = sqrtf((powf(weakSelf.endPosition.x, 2) + powf(weakSelf.endPosition.y, 2)));
+      CGFloat scaleRadius = CGRectGetWidth(weakSelf.maskNode.frame)*.5;
+
+      if (scaleRadius > lineLength)
+      {
+         weakSelf.animationFinished = YES;
+         [weakSelf.animationDelegate fillAnimationComplete];
+         [weakSelf resetMaskNode];
+      }
+   }];
+
+   SKAction* group = [SKAction group:@[scaleUp, fillCompleteCheck]];
+   self.scaleMaskAnimationSequence = [SKAction sequence:@[wait, group]];
 }
 
 #pragma mark - Helper Methods
@@ -47,10 +65,22 @@ static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
 }
 
 #pragma mark - Public Instance Methods
+- (void)prepareFillAnimation
+{
+   self.animationFinished = NO;
+}
+
 - (void)startFillAnimation
 {
    [self resetMaskNode];
    [self.maskNode runAction:self.scaleMaskAnimationSequence withKey:VISCScaleMaskAnimationKey];
+}
+
+- (void)cancelFillAnimation
+{
+   self.animationFinished = YES;
+   [self resetMaskNode];
+   [self.animationDelegate fillAnimationCancelled];
 }
 
 @end
