@@ -53,8 +53,8 @@ static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .1f;
       }
    }];
 
-   SKAction* group = [SKAction group:@[scaleUp, fillCompleteCheck]];
-   self.scaleMaskAnimationSequence = [SKAction sequence:@[wait, group]];
+   SKAction* scaleAndCheckCompletion = [SKAction group:@[scaleUp, fillCompleteCheck]];
+   self.scaleMaskAnimationSequence = [SKAction sequence:@[wait, scaleAndCheckCompletion]];
 }
 
 #pragma mark - Helper Methods
