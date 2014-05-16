@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSArray* directionalNodes;
 @property (nonatomic, assign) BOOL preparedForIgnition;
 @property (nonatomic, assign) BOOL ignited;
+@property (nonatomic, readonly) BOOL canIgnite;
 @end
 
 @implementation VISCVelocityFuse
@@ -43,6 +44,11 @@
 }
 
 #pragma mark - Propery Overrides
+- (BOOL)canIgnite
+{
+   return self.preparedForIgnition && !self.ignited;
+}
+
 - (void)setEndPoint:(CGPoint)endPoint
 {
    if (self.ignited)
@@ -63,7 +69,7 @@
 
 - (void)igniteIfNotIgnited
 {
-   if (self.preparedForIgnition && !self.ignited)
+   if (self.canIgnite)
    {
       self.ignited = YES;
       [self.animatingDirectionalNode startFillAnimation];
@@ -72,17 +78,27 @@
 
 - (void)resetIgnition
 {
-   if (!self.animatingDirectionalNode.animationFinished)
-   {
-      [self.animatingDirectionalNode cancelFillAnimation];
-   }
-
+   [self cancelFillAnimationIfNecessary];
+   
    self.preparedForIgnition = NO;
    self.ignited = NO;
    self.endPoint = CGPointZero;
    [self.directionalNodes enumerateObjectsUsingBlock:^(VISCDirectionalNode* directionalNode, NSUInteger idx, BOOL *stop) {
       [directionalNode resetPath];
    }];
+}
+
+#pragma mark - Helper Methods
+- (void)cancelFillAnimationIfNecessary
+{
+   if (!self.animatingDirectionalNode.animationFinished)
+   {
+      [self.animatingDirectionalNode cancelFillAnimation];
+      if (self.fuseCanceledHandler)
+      {
+         self.fuseCanceledHandler();
+      }
+   }
 }
 
 #pragma mark - VISCFillAnimationDelegate Methods
@@ -92,14 +108,6 @@
    {
       self.fuseCompletionHandler();
       [self resetIgnition];
-   }
-}
-
-- (void)fillAnimationCancelled
-{
-   if (self.fuseCanceledHandler)
-   {
-      self.fuseCanceledHandler();
    }
 }
 

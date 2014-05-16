@@ -10,7 +10,6 @@
 
 @protocol VISCFillAnimationDelegate <NSObject>
 - (void)fillAnimationComplete;
-- (void)fillAnimationCancelled;
 @end
 
 @interface VISCAnimatingDirectionalNode : VISCDirectionalNode

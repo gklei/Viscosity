@@ -80,7 +80,6 @@ static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .1f;
 {
    self.animationFinished = YES;
    [self resetMaskNode];
-   [self.animationDelegate fillAnimationCancelled];
 }
 
 @end
