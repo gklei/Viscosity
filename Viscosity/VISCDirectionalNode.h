@@ -10,11 +10,14 @@
 
 @interface VISCDirectionalNode : SKCropNode
 
-@property (nonatomic, assign) CGPoint endPosition;
+@property (nonatomic, assign, readonly) CGPoint startPosition;
+@property (nonatomic, assign, readonly) CGPoint endPosition;
 @property (nonatomic, assign) BOOL dashed;
 @property (nonatomic, strong) SKColor* color;
 
 + (instancetype)directionalNode;
+
+- (void)updateStartPosition:(CGPoint)startPosition endPosition:(CGPoint)endPosition;
 - (void)resetPath;
 
 @end

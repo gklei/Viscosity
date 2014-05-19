@@ -11,7 +11,9 @@
 static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 
 @interface VISCDirectionalNode ()
-@property (strong, nonatomic) SKShapeNode* shapeNode;
+@property (nonatomic, assign) CGPoint startPosition;
+@property (nonatomic, assign) CGPoint endPosition;
+@property (nonatomic, strong) SKShapeNode* shapeNode;
 @end
 
 @implementation VISCDirectionalNode
@@ -42,14 +44,9 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 }
 
 #pragma mark - Property Overrides
-- (void)setEndPosition:(CGPoint)endPosition
-{
-   _endPosition = endPosition;
-   [self updateShapeNodePathWithStartPosition:self.position endPosition:endPosition];
-}
-
 - (void)setColor:(SKColor*)color
 {
+   _color = color;
    self.shapeNode.strokeColor = color;
 }
 
@@ -64,6 +61,13 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 }
 
 #pragma mark - Public Instance Methods
+- (void)updateStartPosition:(CGPoint)startPosition endPosition:(CGPoint)endPosition
+{
+   self.startPosition = startPosition;
+   self.endPosition = endPosition;
+   [self updateShapeNodePathWithStartPosition:self.startPosition endPosition:self.endPosition];
+}
+
 - (void)resetPath
 {
    self.shapeNode.path = nil;

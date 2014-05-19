@@ -60,7 +60,7 @@
    {
       _endPosition = endPoint;
       [self.directionalNodes enumerateObjectsUsingBlock:^(VISCDirectionalNode* directionalNode, NSUInteger idx, BOOL *stop) {
-         directionalNode.endPosition = endPoint;
+         [directionalNode updateStartPosition:self.position endPosition:endPoint];
       }];
    }
 }
