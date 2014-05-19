@@ -54,13 +54,13 @@
    return self.preparedForIgnition && !self.ignited;
 }
 
-- (void)setEndPosition:(CGPoint)endPoint
+- (void)setEndPosition:(CGPoint)endPosition
 {
    if (self.ignited)
    {
-      _endPosition = endPoint;
+      _endPosition = endPosition;
       [self.directionalNodes enumerateObjectsUsingBlock:^(VISCDirectionalNode* directionalNode, NSUInteger idx, BOOL *stop) {
-         [directionalNode updateStartPosition:self.position endPosition:endPoint];
+         [directionalNode updateStartPosition:self.position endPosition:endPosition];
       }];
    }
 }
