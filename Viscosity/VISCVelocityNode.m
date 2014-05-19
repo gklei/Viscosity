@@ -16,6 +16,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 
 @interface VISCVelocityNode ()
 @property (nonatomic, strong) VISCVelocityFuse* velocityFuse;
+@property (nonatomic, strong) SKSpriteNode* velocityBall;
 @property (nonatomic, strong) SKAction* scalingAnimation;
 @end
 
@@ -24,9 +25,10 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 #pragma mark - Class Methods
 + (instancetype)velocityNode
 {
-   VISCVelocityNode* velocityNode = [self spriteNodeWithImageNamed:@"cd"];
+   VISCVelocityNode* velocityNode = [self node];
 
    [velocityNode setupScale];
+   [velocityNode setupVelocityBall];
    [velocityNode setupScalingAnimation];
    [velocityNode setupPhysicsBody];
    [velocityNode setupVelocityFuse];
@@ -36,9 +38,15 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 }
 
 #pragma mark - Setup Methods
+- (void)setupVelocityBall
+{
+   self.velocityBall = [SKSpriteNode spriteNodeWithImageNamed:@"cd"];
+   [self addChild:self.velocityBall];
+}
+
 - (void)setupPhysicsBody
 {
-   self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CGRectGetWidth(self.frame)*.5];
+   self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CGRectGetWidth(self.velocityBall.frame)*.5];
    self.physicsBody.linearDamping = .5;
    self.physicsBody.restitution = .8;
    self.physicsBody.friction = .5;

@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface VISCVelocityNode : SKSpriteNode
+@interface VISCVelocityNode : SKNode
 
 + (instancetype)velocityNode;
 
