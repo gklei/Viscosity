@@ -9,7 +9,7 @@
 #import "VISCAnimatingDirectionalNode.h"
 
 static NSString* const VISCScaleMaskAnimationKey = @"VISCScaleMaskAnimationKey";
-static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .1f;
+static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
 
 @interface VISCAnimatingDirectionalNode ()
 @property (strong, nonatomic) SKAction* scaleMaskAnimationSequence;

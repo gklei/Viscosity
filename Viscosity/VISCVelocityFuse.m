@@ -34,7 +34,12 @@
 - (void)setupDirectionalNodes
 {
    self.visibleDirectionalNode = [VISCDirectionalNode directionalNode];
+   self.visibleDirectionalNode.color = [UIColor blackColor];
+   self.visibleDirectionalNode.alpha = .15;
+
    self.animatingDirectionalNode = [VISCAnimatingDirectionalNode directionalNode];
+   self.animatingDirectionalNode.color = [UIColor colorWithRed:1 green:.1 blue:.3 alpha:1];
+   self.animatingDirectionalNode.alpha = .7;
    self.animatingDirectionalNode.animationDelegate = self;
 
    self.directionalNodes = @[self.visibleDirectionalNode, self.animatingDirectionalNode];
