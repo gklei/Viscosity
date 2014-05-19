@@ -18,6 +18,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 @property (nonatomic, strong) VISCVelocityFuse* velocityFuse;
 @property (nonatomic, strong) SKSpriteNode* velocityBall;
 @property (nonatomic, strong) SKAction* scalingAnimation;
+@property (nonatomic, strong) SKSpriteNode* hitBox;
 @end
 
 @implementation VISCVelocityNode
@@ -32,6 +33,8 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    [velocityNode setupScalingAnimation];
    [velocityNode setupPhysicsBody];
    [velocityNode setupVelocityFuse];
+   [velocityNode setupHitbox];
+
    velocityNode.userInteractionEnabled = YES;
 
    return velocityNode;
@@ -78,6 +81,13 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    };
 
    [self addChild:self.velocityFuse];
+}
+
+- (void)setupHitbox
+{
+   CGSize hitboxSize = CGSizeApplyAffineTransform(self.velocityBall.size, CGAffineTransformMakeScale(1.5, 1.5));
+   self.hitBox = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:hitboxSize];
+   [self addChild:self.hitBox];
 }
 
 #pragma mark - Helper Methods
