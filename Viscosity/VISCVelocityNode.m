@@ -108,7 +108,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 
 - (void)fire
 {
-   self.physicsBody.velocity = CGVectorMake(self.velocityFuse.endPoint.x*4, self.velocityFuse.endPoint.y*4);
+   self.physicsBody.velocity = CGVectorMake(self.velocityFuse.endPosition.x*4, self.velocityFuse.endPosition.y*4);
 }
 
 #pragma mark - Overridden UIResponder Methods
@@ -126,7 +126,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
    [super touchesMoved:touches withEvent:event];
 
    [self.velocityFuse igniteIfNotIgnited];
-   self.velocityFuse.endPoint = [[touches anyObject] locationInNode:self];
+   self.velocityFuse.endPosition = [[touches anyObject] locationInNode:self];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

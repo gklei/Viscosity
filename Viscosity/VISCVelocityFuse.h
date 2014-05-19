@@ -10,7 +10,7 @@
 
 @interface VISCVelocityFuse : SKNode
 
-@property (nonatomic, assign) CGPoint endPoint;
+@property (nonatomic, assign) CGPoint endPosition;
 @property (nonatomic, copy) dispatch_block_t fuseCompletionHandler;
 @property (nonatomic, copy) dispatch_block_t fuseCanceledHandler;
 
