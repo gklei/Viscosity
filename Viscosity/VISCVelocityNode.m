@@ -69,6 +69,7 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 - (void)setupVelocityFuse
 {
    self.velocityFuse = [VISCVelocityFuse velocityFuse];
+   self.velocityFuse.startPositionOffsetFromCenter = 20;
 
    __weak typeof(self) weakSelf = self;
    self.velocityFuse.fuseCompletionHandler = ^{
@@ -124,9 +125,13 @@ static CGFloat VISCVelocityNodeUnselectedScale = 1.5;
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
    [super touchesMoved:touches withEvent:event];
+   CGPoint touchPosition = [[touches anyObject] locationInNode:self];
 
-   [self.velocityFuse igniteIfNotIgnited];
-   self.velocityFuse.endPosition = [[touches anyObject] locationInNode:self];
+   [self.velocityFuse updateEndPosition:touchPosition];
+   if (![self.velocityBall containsPoint:touchPosition])
+   {
+      [self.velocityFuse igniteIfNotIgnited];
+   }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

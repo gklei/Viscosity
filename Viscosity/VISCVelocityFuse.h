@@ -10,11 +10,15 @@
 
 @interface VISCVelocityFuse : SKNode
 
-@property (nonatomic, assign) CGPoint endPosition;
+@property (nonatomic, assign, readonly) CGPoint endPosition;
+@property (nonatomic, assign, readonly) CGPoint startPosition;
+@property (nonatomic, assign) CGFloat startPositionOffsetFromCenter;
 @property (nonatomic, copy) dispatch_block_t fuseCompletionHandler;
 @property (nonatomic, copy) dispatch_block_t fuseCanceledHandler;
 
 + (instancetype)velocityFuse;
+
+- (void)updateEndPosition:(CGPoint)endPosition;
 
 - (void)prepareForIgnition;
 - (void)igniteIfNotIgnited;

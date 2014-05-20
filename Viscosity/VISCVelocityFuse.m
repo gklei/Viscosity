@@ -11,6 +11,7 @@
 #import "VISCVelocityFuse.h"
 
 @interface VISCVelocityFuse () <VISCFillAnimationDelegate>
+@property (nonatomic, assign) CGPoint endPosition;
 @property (nonatomic, strong) VISCDirectionalNode* visibleDirectionalNode;
 @property (nonatomic, strong) VISCAnimatingDirectionalNode* animatingDirectionalNode;
 @property (nonatomic, strong) NSArray* directionalNodes;
@@ -49,23 +50,33 @@
 }
 
 #pragma mark - Propery Overrides
+- (CGPoint)startPosition
+{
+//   CGFloat angle = tanf(self.endPosition.y / self.endPosition.x);
+//   CGFloat yValue = sinf(angle) * self.startPositionOffsetFromCenter;
+//   CGFloat xValue = cosf(angle) * self.startPositionOffsetFromCenter;
+//
+//   return CGPointMake(xValue, yValue);
+   return CGPointZero;
+}
+
 - (BOOL)canIgnite
 {
    return self.preparedForIgnition && !self.ignited;
 }
 
-- (void)setEndPosition:(CGPoint)endPosition
+#pragma mark - Public Instance Methods
+- (void)updateEndPosition:(CGPoint)endPosition
 {
    if (self.ignited)
    {
-      _endPosition = endPosition;
+      self.endPosition = endPosition;
       [self.directionalNodes enumerateObjectsUsingBlock:^(VISCDirectionalNode* directionalNode, NSUInteger idx, BOOL *stop) {
-         [directionalNode updateStartPosition:self.position endPosition:endPosition];
+         [directionalNode updateStartPosition:self.startPosition endPosition:endPosition];
       }];
    }
 }
 
-#pragma mark - Public Instance Methods
 - (void)prepareForIgnition
 {
    self.preparedForIgnition = YES;
