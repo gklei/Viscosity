@@ -51,13 +51,15 @@
 
 #pragma mark - Propery Overrides
 - (CGPoint)startPosition
-{
-//   CGFloat angle = tanf(self.endPosition.y / self.endPosition.x);
-//   CGFloat yValue = sinf(angle) * self.startPositionOffsetFromCenter;
-//   CGFloat xValue = cosf(angle) * self.startPositionOffsetFromCenter;
-//
-//   return CGPointMake(xValue, yValue);
-   return CGPointZero;
+{  
+   CGFloat magnitude = sqrtf(self.endPosition.x*self.endPosition.x + self.endPosition.y*self.endPosition.y);
+   CGFloat normalizedX = self.endPosition.x / magnitude;
+   CGFloat normalizedY = self.endPosition.y / magnitude;
+   
+   CGPoint startPosition = CGPointMake(normalizedX * self.startPositionOffsetFromCenter,
+                                       normalizedY * self.startPositionOffsetFromCenter);
+   
+   return startPosition;
 }
 
 - (BOOL)canIgnite
@@ -74,6 +76,10 @@
       [self.directionalNodes enumerateObjectsUsingBlock:^(VISCDirectionalNode* directionalNode, NSUInteger idx, BOOL *stop) {
          [directionalNode updateStartPosition:self.startPosition endPosition:endPosition];
       }];
+   }
+   else
+   {
+      [self.visibleDirectionalNode updateStartPosition:self.startPosition endPosition:endPosition];
    }
 }
 
