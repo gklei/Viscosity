@@ -8,14 +8,10 @@
 
 #import "VISCDirectionalNode.h"
 
-@protocol VISCFillAnimationDelegate <NSObject>
-- (void)fillAnimationComplete;
-@end
-
 @interface VISCAnimatingDirectionalNode : VISCDirectionalNode
 
+@property (nonatomic, copy) dispatch_block_t fillCompletionHandler;
 @property (nonatomic, assign) CGFloat animationDuration;
-@property (nonatomic, weak) id<VISCFillAnimationDelegate> animationDelegate;
 @property (nonatomic, readonly) BOOL animationFinished;
 
 - (void)prepareFillAnimation;

@@ -10,7 +10,7 @@
 #import "VISCAnimatingDirectionalNode.h"
 #import "VISCVelocityFuse.h"
 
-@interface VISCVelocityFuse () <VISCFillAnimationDelegate>
+@interface VISCVelocityFuse ()
 @property (nonatomic, assign) CGPoint endPosition;
 @property (nonatomic, strong) VISCDirectionalNode* visibleDirectionalNode;
 @property (nonatomic, strong) VISCAnimatingDirectionalNode* animatingDirectionalNode;
@@ -34,19 +34,36 @@
 #pragma mark - Setup Methods
 - (void)setupDirectionalNodes
 {
-   self.visibleDirectionalNode = [VISCDirectionalNode directionalNode];
-   self.visibleDirectionalNode.color = [UIColor blackColor];
-   self.visibleDirectionalNode.alpha = .15;
-
-   self.animatingDirectionalNode = [VISCAnimatingDirectionalNode directionalNode];
-   self.animatingDirectionalNode.color = [UIColor colorWithRed:1 green:.1 blue:.3 alpha:1];
-   self.animatingDirectionalNode.alpha = .7;
-   self.animatingDirectionalNode.animationDelegate = self;
+   [self setupVisibleDirectionalNode];
+   [self setupAnimatingDirectionalNode];
 
    self.directionalNodes = @[self.visibleDirectionalNode, self.animatingDirectionalNode];
 
-   [self addChild:self.visibleDirectionalNode];
    [self addChild:self.animatingDirectionalNode];
+   [self addChild:self.visibleDirectionalNode];
+}
+
+- (void)setupVisibleDirectionalNode
+{
+   self.visibleDirectionalNode = [VISCDirectionalNode directionalNode];
+   self.visibleDirectionalNode.color = [UIColor blackColor];
+   self.visibleDirectionalNode.alpha = .15;
+}
+
+- (void)setupAnimatingDirectionalNode
+{
+   self.animatingDirectionalNode = [VISCAnimatingDirectionalNode directionalNode];
+   self.animatingDirectionalNode.color = [UIColor colorWithRed:1 green:.1 blue:.3 alpha:1];
+   self.animatingDirectionalNode.alpha = .7;
+
+   __weak typeof(self) weakSelf = self;
+   self.animatingDirectionalNode.fillCompletionHandler = ^{
+      if (weakSelf.fuseCompletionHandler)
+      {
+         weakSelf.fuseCompletionHandler();
+         [weakSelf resetIgnition];
+      }
+   };
 }
 
 #pragma mark - Propery Overrides
@@ -113,16 +130,6 @@
       {
          self.fuseCanceledHandler();
       }
-   }
-}
-
-#pragma mark - VISCFillAnimationDelegate Methods
-- (void)fillAnimationComplete
-{
-   if (self.fuseCompletionHandler)
-   {
-      self.fuseCompletionHandler();
-      [self resetIgnition];
    }
 }
 
