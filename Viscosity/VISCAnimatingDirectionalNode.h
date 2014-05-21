@@ -10,7 +10,7 @@
 
 @interface VISCAnimatingDirectionalNode : VISCDirectionalNode
 
-@property (nonatomic, copy) dispatch_block_t fillCompletionHandler;
+@property (nonatomic, copy) dispatch_block_t animationCompletionHandler;
 @property (nonatomic, assign) CGFloat animationDuration;
 @property (nonatomic, readonly) BOOL animationFinished;
 

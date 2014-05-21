@@ -57,7 +57,7 @@
    self.animatingDirectionalNode.alpha = .7;
 
    __weak typeof(self) weakSelf = self;
-   self.animatingDirectionalNode.fillCompletionHandler = ^{
+   self.animatingDirectionalNode.animationCompletionHandler = ^{
       if (weakSelf.fuseCompletionHandler)
       {
          weakSelf.fuseCompletionHandler();

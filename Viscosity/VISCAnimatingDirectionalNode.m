@@ -47,9 +47,9 @@ static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
       if (scaleRadius > lineLength + 15)
       {
          weakSelf.animationFinished = YES;
-         if (weakSelf.fillCompletionHandler)
+         if (weakSelf.animationCompletionHandler)
          {
-            weakSelf.fillCompletionHandler();
+            weakSelf.animationCompletionHandler();
          }
          [weakSelf resetMaskNode];
       }
