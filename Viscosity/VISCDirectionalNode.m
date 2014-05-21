@@ -54,10 +54,14 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
 - (void)updateShapeNodePathWithStartPosition:(CGPoint)startPosition endPosition:(CGPoint)endPosition
 {
    CGMutablePathRef path = CGPathCreateMutable();
-   CGPathMoveToPoint(path, NULL, startPosition.x, startPosition.y);
-   CGPathAddLineToPoint(path, NULL, endPosition.x, endPosition.y);
+   
+   CGFloat delta = (endPosition.y >= 0) ? M_PI : -M_PI;
+   CGPathAddRelativeArc(path, NULL, endPosition.x, endPosition.y, 8, atan(-endPosition.x / endPosition.y), delta);
+   CGPathAddLineToPoint(path, NULL, startPosition.x, startPosition.y);
+   CGPathCloseSubpath(path);
 
    self.shapeNode.path = self.dashed ? CGPathCreateCopyByDashingPath(path, NULL, 0, VISCDirectionalNodeDashPattern, 2) : path;
+
 }
 
 #pragma mark - Public Instance Methods
