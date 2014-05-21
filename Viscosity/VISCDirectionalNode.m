@@ -56,7 +56,7 @@ static const CGFloat VISCDirectionalNodeDashPattern[] = {3.5, 2};
    CGMutablePathRef path = CGPathCreateMutable();
    
    CGFloat delta = (endPosition.y >= 0) ? M_PI : -M_PI;
-   CGPathAddRelativeArc(path, NULL, endPosition.x, endPosition.y, 8, atan(-endPosition.x / endPosition.y), delta);
+   CGPathAddRelativeArc(path, NULL, endPosition.x, endPosition.y, 4, atan(-endPosition.x / endPosition.y), delta);
    CGPathAddLineToPoint(path, NULL, startPosition.x, startPosition.y);
    CGPathCloseSubpath(path);
 

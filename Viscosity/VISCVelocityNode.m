@@ -12,7 +12,7 @@
 #import "VISCVelocityFuse.h"
 
 static CGFloat VISCVelocityNodeSelectedScaleFactor = 1.333;
-static CGFloat VISCVelocityNodeUnselectedScale = 1.2;
+static CGFloat VISCVelocityNodeUnselectedScale = 1.3;
 
 @interface VISCVelocityNode ()
 @property (nonatomic, strong) VISCVelocityFuse* velocityFuse;
