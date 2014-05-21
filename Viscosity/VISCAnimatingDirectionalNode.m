@@ -33,7 +33,6 @@ static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
    self.maskNode = [SKSpriteNode spriteNodeWithImageNamed:@"CircleMask"];
    self.color = [UIColor blackColor];
    self.animationDuration = 2;
-   self.dashed = YES;
 
    SKAction* wait = [SKAction waitForDuration:VISCDelayBeforeScaleMaskAniamtion];
    SKAction* scaleUp = [SKAction scaleTo:5 duration:self.animationDuration];
@@ -45,7 +44,7 @@ static CGFloat const VISCDelayBeforeScaleMaskAniamtion = .25f;
       CGFloat lineLength = sqrtf((powf(weakSelf.endPosition.x, 2) + powf(weakSelf.endPosition.y, 2)));
       CGFloat scaleRadius = CGRectGetWidth(weakSelf.maskNode.frame)*.5;
 
-      if (scaleRadius > lineLength)
+      if (scaleRadius > lineLength + 15)
       {
          weakSelf.animationFinished = YES;
          [weakSelf.animationDelegate fillAnimationComplete];
