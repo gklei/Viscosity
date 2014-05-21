@@ -109,10 +109,7 @@
 				5BAA46E6191D3C44008872C9 /* VISCVelocityNode.m */,
 				8EF127BF19219FAA0070DC78 /* VISCVelocityFuse.h */,
 				8EF127C019219FAA0070DC78 /* VISCVelocityFuse.m */,
-				8EF127B0191F3AE10070DC78 /* VISCDirectionalNode.h */,
-				8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */,
-				8EF127BC1920715C0070DC78 /* VISCAnimatingDirectionalNode.h */,
-				8EF127BD1920715C0070DC78 /* VISCAnimatingDirectionalNode.m */,
+				8EFB3658192C693C00DCF1D8 /* Directional Nodes */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -211,6 +208,17 @@
 				5BB00B3718E5DF9D002AC435 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EFB3658192C693C00DCF1D8 /* Directional Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				8EF127B0191F3AE10070DC78 /* VISCDirectionalNode.h */,
+				8EF127B1191F3AE10070DC78 /* VISCDirectionalNode.m */,
+				8EF127BC1920715C0070DC78 /* VISCAnimatingDirectionalNode.h */,
+				8EF127BD1920715C0070DC78 /* VISCAnimatingDirectionalNode.m */,
+			);
+			name = "Directional Nodes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

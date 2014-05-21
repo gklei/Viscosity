@@ -19,7 +19,6 @@
 + (instancetype)velocityFuse;
 
 - (void)updateEndPosition:(CGPoint)endPosition;
-
 - (void)prepareForIgnition;
 - (void)igniteIfNotIgnited;
 - (void)resetIgnition;
