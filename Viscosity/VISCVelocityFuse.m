@@ -56,10 +56,7 @@
    CGFloat normalizedX = self.endPosition.x / magnitude;
    CGFloat normalizedY = self.endPosition.y / magnitude;
    
-   CGPoint startPosition = CGPointMake(normalizedX * self.startPositionOffsetFromCenter,
-                                       normalizedY * self.startPositionOffsetFromCenter);
-   
-   return startPosition;
+   return CGPointMake(normalizedX*self.startPositionOffsetFromCenter, normalizedY*self.startPositionOffsetFromCenter);
 }
 
 - (BOOL)canIgnite
