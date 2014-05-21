@@ -74,10 +74,6 @@
          [directionalNode updateStartPosition:self.startPosition endPosition:endPosition];
       }];
    }
-   else
-   {
-      [self.visibleDirectionalNode updateStartPosition:self.startPosition endPosition:endPosition];
-   }
 }
 
 - (void)prepareForIgnition
